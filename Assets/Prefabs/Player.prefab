@@ -210,7 +210,8 @@ MonoBehaviour:
   speed: 15
   maxSpeed: 5
   turnSpeed: 10
-  jumpForce: 5
+  jumpForce: 8
+  fallingG: 0
   G: 11
   slamJumpHeight: 2
   slamForce: 1000

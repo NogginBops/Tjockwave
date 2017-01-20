@@ -14,9 +14,11 @@ public class Player : MonoBehaviour {
     public float maxSpeed;
     public float turnSpeed;
     public float jumpForce;
+    public float fallingG;
 
-    [Tooltip("The gravitational constant.")]
+    [Tooltip("Gravity")]
     public float G;
+    float staticG;
 
     [Header("Slam settings")]
 
@@ -30,16 +32,29 @@ public class Player : MonoBehaviour {
     Vector3 targetPosition;
 
     bool slamming = false;
+    bool grounded = true;
 
     float rayDistance = 15;
 
 	// Use this for initialization
 	void Start () {
         rb = GetComponent<Rigidbody>();
-	}
+        staticG = G;
+
+    }
 	
 	// Update is called once per frame
 	void FixedUpdate () {
+
+        // Gravity
+        if (rb.velocity.y <= 0 && grounded == false)
+        {
+            G = fallingG;
+        }
+        else
+        {
+            G = staticG;
+        }
 
         rb.AddForce(Vector3.down * G * rb.mass);
 
@@ -55,11 +70,17 @@ public class Player : MonoBehaviour {
 
         if (currentPlayerHeight < slamDistanceToGround)
         {
+            grounded = true;
+
             if (slamming == true)
             {
                 Instantiate(slamShockWave, transform.position, Quaternion.identity);
                 slamming = false;
             }
+        }
+        else
+        {
+            grounded = false;
         }
 
         // -- MOVE TO MOUSE --
@@ -79,13 +100,6 @@ public class Player : MonoBehaviour {
 
             rb.AddForce(dir * speed, ForceMode.Force);
 
-            float currentSpeed = rb.velocity.magnitude;
-
-            if (currentSpeed > maxSpeed)
-            {
-                rb.velocity = rb.velocity.normalized * maxSpeed;
-            }
-
             rb.velocity = Vector3.Lerp(rb.velocity, transform.forward, 0.1f);
 
             Quaternion rotation = Quaternion.LookRotation(dir);
@@ -99,14 +113,17 @@ public class Player : MonoBehaviour {
         // -- JUMP --
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            rb.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
+            if (grounded)
+            {
+                rb.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
+            }
         }
 
         if (Input.GetMouseButtonDown(1))
         {
             if (slamming == false)
             {             
-                // If the player is high enough in the air...
+                // If the player is high up enough in the air...
                 if (currentPlayerHeight > slamJumpHeight)
                 {
                     // ... Slam down.
