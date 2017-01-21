@@ -143,12 +143,17 @@ Prefab:
     - target: {fileID: 114775506347471726, guid: d412c9757f38ef54eab5ae542b1e689d,
         type: 2}
       propertyPath: speed
-      value: 25
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 114775506347471726, guid: d412c9757f38ef54eab5ae542b1e689d,
         type: 2}
       propertyPath: jumpForce
-      value: 20
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 114775506347471726, guid: d412c9757f38ef54eab5ae542b1e689d,
+        type: 2}
+      propertyPath: fallingG
+      value: 30
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: d412c9757f38ef54eab5ae542b1e689d, type: 2}
@@ -330,19 +335,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7109173c93dd7cf498a659a03e01c9d4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemySpawnDelay: 0.1
+  enemySpawnDelay: 0.01
   spawnOffset: {x: 0, y: 1, z: 0}
   player: {fileID: 189463546}
   flockSettigns:
     neighborRadius: 10
-    separationAmp: 5
+    separationAmp: 6
     alignmentAmp: 1
     cohesionAmp: 1
     centeringAmp: 0
-    followPlayerAmp: 6
+    followPlayerAmp: 4
   Waves:
-  - enemyCount: 10
-    waveDuration: 5
+  - enemyCount: 400
+    waveDuration: 500
     enemyPrefab: {fileID: 1904599184031766, guid: 16868e291f230014a8b0720380457b6d,
       type: 2}
   - enemyCount: 30
@@ -486,7 +491,7 @@ Transform:
   m_GameObject: {fileID: 1875475269}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 15, y: 1, z: 15}
+  m_LocalScale: {x: 25, y: 1, z: 25}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 3

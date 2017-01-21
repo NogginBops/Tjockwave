@@ -90,7 +90,7 @@ public class WaveManager : MonoBehaviour {
 
                 Enemy enemy = spawnQueue.Dequeue();
 
-                Vector2 randPos = Random.insideUnitCircle * Random.Range(1, 5);
+                Vector2 randPos = Random.insideUnitCircle * Random.Range(1, 8);
 
                 GameObject enemyGO = Instantiate(enemy.prefab, spawnOffset + new Vector3(randPos.x, 0, randPos.y), Quaternion.identity);
 
