@@ -21,7 +21,7 @@ public class Player : MonoBehaviour {
     public GameObject slamShockWave;
 
     public CameraScript cameraScript;
-
+    
     [Tooltip("The stats the player will have at every food count. Element 0 is 1 food.")]
     public FoodBoostData[] foodBoostData;
 
@@ -184,8 +184,15 @@ public class Player : MonoBehaviour {
         else
         {
             health = 0;
-            Debug.Log("WASTED!");
+            Die();
         }
+
+        UIController.Instance.SetPlayerHealth(health / baseHealth);
+    }
+
+    public void Die()
+    {
+        Debug.Log("WASTED!");
     }
 
     public void Eat()
@@ -195,12 +202,19 @@ public class Player : MonoBehaviour {
         {
             ReplaceSettings(foodBoostData[foodCounter - 1]);
         }
+        else
+        {
+            foodCounter--;
+        }
+
+        UIController.Instance.SetFoodPercentage(foodCounter / (foodBoostData.Length + 1));
     }
 
     public void ReturnToBaseValues()
     {
         foodCounter = 0;
         ReplaceSettings(baseSettings);
+        UIController.Instance.SetFoodPercentage(0);
     }
 
     [System.Serializable]

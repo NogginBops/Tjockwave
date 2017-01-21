@@ -31,7 +31,7 @@ public class Enemy : MonoBehaviour {
             {
                 if (collision.impulse.sqrMagnitude > (deathVelocity * deathVelocity))
                 {
-                    Die();
+                    Hurt(health);
                 }           
             }
         }         
@@ -46,13 +46,11 @@ public class Enemy : MonoBehaviour {
 
     public void Hurt(float damage)
     {
-        if (health - damage > 0)
-        {
-            health -= damage;
-        }
-        else
-        {
+        health -= damage;
+        if (health <= 0)
+        { 
             Die();
+            UIController.Instance.AddSlimeKill();
         }
     }
 
