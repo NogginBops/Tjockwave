@@ -6,7 +6,7 @@ Material:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: Stands
+  m_Name: Stands 1
   m_Shader: {fileID: 46, guid: 0000000000000000f000000000000000, type: 0}
   m_ShaderKeywords: _EMISSION _METALLICGLOSSMAP _NORMALMAP
   m_LightmapFlags: 1
@@ -18,7 +18,7 @@ Material:
     - first:
         name: _BumpMap
       second:
-        m_Texture: {fileID: 2800000, guid: aded2e4e9a295ec48847a9687717bf80, type: 3}
+        m_Texture: {fileID: 2800000, guid: d5ff66c2ee9011f40a3a39d937cf7511, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - first:
@@ -48,13 +48,13 @@ Material:
     - first:
         name: _MainTex
       second:
-        m_Texture: {fileID: 2800000, guid: ab124058e716eb44badc2b29c1ca0bfd, type: 3}
+        m_Texture: {fileID: 2800000, guid: b636776bbee5a3048b362cb979b4eb68, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - first:
         name: _MetallicGlossMap
       second:
-        m_Texture: {fileID: 2800000, guid: ee48cd9d85d948b4bb74c76c6b70f13f, type: 3}
+        m_Texture: {fileID: 2800000, guid: 2efdac4eb60da7046bb839cb40aab6be, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - first:

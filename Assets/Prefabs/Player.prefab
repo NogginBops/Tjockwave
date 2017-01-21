@@ -215,10 +215,7 @@ MonoBehaviour:
   G: 16
   spaceG: 9
   fallingG: 30
-<<<<<<< Updated upstream
   G: 11
-=======
->>>>>>> Stashed changes
   slamMinJumpHeight: 2
   slamDownForce: 1000
   slamDistanceToGround: 1
