@@ -13,7 +13,6 @@ public class Player : MonoBehaviour {
     [Header("Movement settings")]
 
     public float speed;
-    public float maxSpeed;
     public float turnSpeed;
     public float jumpForce;
 

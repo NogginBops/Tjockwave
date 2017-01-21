@@ -21,13 +21,13 @@ GameObject:
   - component: {fileID: 4830780194581616}
   - component: {fileID: 33007752535602124}
   - component: {fileID: 23987332377607144}
-  - component: {fileID: 65613699470027506}
+  - component: {fileID: 64361298125470034}
   m_Layer: 0
   m_Name: stall_03
-  m_TagString: Untagged
+  m_TagString: Stall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &4830780194581616
 Transform:
@@ -80,15 +80,17 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1630648487290422}
   m_Mesh: {fileID: 4300004, guid: f77ba32c2062814418ecf4cc89382700, type: 3}
---- !u!65 &65613699470027506
-BoxCollider:
+--- !u!64 &64361298125470034
+MeshCollider:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1630648487290422}
-  m_Material: {fileID: 13400000, guid: 3e1b4277e320fe04f968c79885888e4b, type: 2}
+  m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 6.007783, y: 12.524419, z: 6.5077863}
-  m_Center: {x: 0, y: 6.2621217, z: 0.1137785}
+  m_Convex: 1
+  m_InflateMesh: 0
+  m_SkinWidth: 0.01
+  m_Mesh: {fileID: 4300004, guid: f77ba32c2062814418ecf4cc89382700, type: 3}

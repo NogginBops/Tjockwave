@@ -7,29 +7,68 @@ public class FoodController : MonoBehaviour {
     public GameObject foodPrefab;
     public int maxFood;
 
-    [Tooltip("A decimal chance of food spawning every frame (between 0-1).")]
-    public float spawnChance;
+    public float stallSpawnHeight;
     public float spawnHeight;
+
+    public float minDelay;
+    public float maxDelay;
+
+    public float throwDirForce;
+    public float throwUpForce;
+
+    float timer;
+    float randomDelay;
 
     BoxCollider area;
     List<Food> currentFood;
+
+    GameObject[] stalls;
 
 	// Use this for initialization
 	void Start () {
         area = GetComponent<BoxCollider>();
         currentFood = new List<Food>();
+
+        stalls = GameObject.FindGameObjectsWithTag("Stall");
+
+        randomDelay = Random.Range(minDelay, maxDelay);
     }
 	
 	// Update is called once per frame
 	void Update () {
         if (currentFood.Count < maxFood)
         {
-            if (Random.Range(0f, 1f) < spawnChance)
+            timer += Time.deltaTime;
+
+            if (timer > randomDelay)
             {
-                currentFood.Add(Instantiate(foodPrefab, RandomPos(), Quaternion.identity, transform).GetComponent<Food>());
+                Vector3 targetPos = RandomPos();
+                GameObject randomStall = stalls[Random.Range(0, stalls.Length)];
+
+                Vector3 stallPos = new Vector3(
+                    randomStall.transform.position.x, 
+                    stallSpawnHeight, 
+                    randomStall.transform.position.z
+                    );
+
+                Vector3 dir = (targetPos - stallPos).normalized;
+
+                currentFood.Add(Instantiate(foodPrefab, stallPos, Quaternion.identity, transform).GetComponent<Food>());
+                currentFood[currentFood.Count - 1].GetComponent<Rigidbody>().AddForce(dir * throwDirForce + Vector3.up * throwUpForce);
+                randomDelay = Random.Range(minDelay, maxDelay);
+                timer = 0;
             }
         }
+        else
+        {
+            timer = 0;
+        }
 	}
+
+    public void RemoveFood(Food food)
+    {
+        currentFood.Remove(food);
+    }
 
     Vector3 RandomPos()
     {
@@ -38,10 +77,5 @@ public class FoodController : MonoBehaviour {
             spawnHeight, 
             Random.Range(area.bounds.min.z, area.bounds.max.z)
            );
-    }
-
-    public void RemoveFood(Food food)
-    {
-        currentFood.Remove(food);
     }
 }

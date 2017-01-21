@@ -1822,8 +1822,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   arenaLayerMask: Arena
   health: 100
-  speed: 20
-  maxSpeed: 100
+  speed: 30
   turnSpeed: 10
   jumpForce: 6
   G: 16
@@ -1836,6 +1835,11 @@ MonoBehaviour:
     type: 2}
   slamShockwaveParticles: {fileID: 1979396053959334, guid: ab60f6cbcfbce0b49a9db8f1d99c26bd,
     type: 2}
+  cameraScript: {fileID: 0}
+  foodCounter: 0
+  healthMultiplier: 1.1
+  speedDivisor: 1
+  scaleMultiplier: 1.2
 --- !u!136 &136926852705379678
 CapsuleCollider:
   m_ObjectHideFlags: 1
