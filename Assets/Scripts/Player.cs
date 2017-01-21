@@ -30,14 +30,14 @@ public class Player : MonoBehaviour {
     public float slamDistanceToGround;
     public GameObject slamShockWave;
 
+    public GameObject slamShockwaveParticles;
+
     Rigidbody rb;
     Vector3 targetPosition;
 
     bool slamming = false;
     bool grounded = true;
-
-    float rayDistance = 15;
-
+    
 	// Use this for initialization
 	void Start () {
         rb = GetComponent<Rigidbody>();
@@ -79,6 +79,7 @@ public class Player : MonoBehaviour {
             if (slamming == true)
             {
                 Instantiate(slamShockWave, transform.position, Quaternion.identity);
+                Instantiate(slamShockwaveParticles, transform.position, Quaternion.Euler(new Vector3(90, 0, 0)));
 
                 // Changes the physics layer of the player and its children.
                 gameObject.layer = LayerMask.NameToLayer("Player");

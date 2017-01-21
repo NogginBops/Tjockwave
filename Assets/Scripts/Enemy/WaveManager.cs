@@ -101,9 +101,7 @@ public class WaveManager : MonoBehaviour {
                 pos.z *= spawnArea.size.z;
 
                 pos += spawnArea.center;
-
-                Vector2 randPos = Random.insideUnitCircle * Random.Range(1, 8);
-
+                
                 GameObject enemyGO = Instantiate(enemy.prefab, spawnArea.transform.position + pos, Quaternion.identity);
 
                 enemyGO.transform.SetParent(enemy.flock.transform);

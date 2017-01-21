@@ -36,4 +36,9 @@ public class ShockWave : MonoBehaviour {
             Debug.Log("Shockwaved!");
         }
     }
+
+    void OnDrawGizmos()
+    {
+        Gizmos.DrawWireSphere(transform.position, transform.localScale.x);
+    }
 }

@@ -54,6 +54,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 30
   maxSize: 10
+  force: 2000
 --- !u!135 &135869358878966126
 SphereCollider:
   m_ObjectHideFlags: 1
