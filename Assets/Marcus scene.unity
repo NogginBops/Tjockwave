@@ -141,7 +141,7 @@ GameObject:
   - component: {fileID: 566020746}
   - component: {fileID: 566020745}
   - component: {fileID: 566020749}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: TestPrimitive (7)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -244,7 +244,7 @@ GameObject:
   - component: {fileID: 616903258}
   - component: {fileID: 616903257}
   - component: {fileID: 616903261}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: TestPrimitive
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -347,7 +347,7 @@ GameObject:
   - component: {fileID: 849220619}
   - component: {fileID: 849220618}
   - component: {fileID: 849220622}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: TestPrimitive (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -450,7 +450,7 @@ GameObject:
   - component: {fileID: 971300713}
   - component: {fileID: 971300712}
   - component: {fileID: 971300716}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: TestPrimitive (5)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -703,7 +703,7 @@ GameObject:
   - component: {fileID: 1586119108}
   - component: {fileID: 1586119107}
   - component: {fileID: 1586119111}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: TestPrimitive (6)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -806,7 +806,7 @@ GameObject:
   - component: {fileID: 1715031244}
   - component: {fileID: 1715031243}
   - component: {fileID: 1715031247}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: TestPrimitive (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -973,7 +973,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1875475269}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: -1, z: 0}
   m_LocalScale: {x: 15, y: 1, z: 15}
   m_Children: []
   m_Father: {fileID: 0}
@@ -992,7 +992,7 @@ GameObject:
   - component: {fileID: 1966174298}
   - component: {fileID: 1966174297}
   - component: {fileID: 1966174301}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: TestPrimitive (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1095,7 +1095,7 @@ GameObject:
   - component: {fileID: 2033822575}
   - component: {fileID: 2033822574}
   - component: {fileID: 2033822578}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: TestPrimitive (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1198,7 +1198,7 @@ GameObject:
   - component: {fileID: 2103363057}
   - component: {fileID: 2103363056}
   - component: {fileID: 2103363060}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: TestPrimitive (8)
   m_TagString: Untagged
   m_Icon: {fileID: 0}

@@ -7,6 +7,8 @@ public class Player : MonoBehaviour {
     Plane raycastPlane = new Plane(Vector3.up, Vector3.zero);
 
     public string arenaLayerMask;
+    
+    public float health;
 
     [Header("Movement settings")]
 
@@ -152,6 +154,19 @@ public class Player : MonoBehaviour {
                     slamming = true;
                 }
             }
+        }
+    }
+
+    public void Hurt(float damage)
+    {
+        if (health - damage > 0)
+        {
+            health -= damage;
+        }
+        else
+        {
+            health = 0;
+            Debug.Log("WASTED!");
         }
     }
 }
