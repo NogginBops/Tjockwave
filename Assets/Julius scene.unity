@@ -148,7 +148,7 @@ Prefab:
     - target: {fileID: 114775506347471726, guid: d412c9757f38ef54eab5ae542b1e689d,
         type: 2}
       propertyPath: jumpForce
-      value: 8
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 114775506347471726, guid: d412c9757f38ef54eab5ae542b1e689d,
         type: 2}
@@ -339,14 +339,14 @@ MonoBehaviour:
   spawnOffset: {x: 0, y: 1, z: 0}
   player: {fileID: 189463546}
   flockSettigns:
-    neighborRadius: 10
-    separationAmp: 6
+    neighborRadius: 4
+    separationAmp: 7
     alignmentAmp: 1
-    cohesionAmp: 1
+    cohesionAmp: 5.5
     centeringAmp: 0
     followPlayerAmp: 4
   Waves:
-  - enemyCount: 400
+  - enemyCount: 50
     waveDuration: 500
     enemyPrefab: {fileID: 1904599184031766, guid: 16868e291f230014a8b0720380457b6d,
       type: 2}
@@ -490,7 +490,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1875475269}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: -1, z: 0}
   m_LocalScale: {x: 25, y: 1, z: 25}
   m_Children: []
   m_Father: {fileID: 0}

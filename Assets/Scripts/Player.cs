@@ -66,13 +66,9 @@ public class Player : MonoBehaviour {
 
         // Measures the height the player is off the ground.
         Ray ray = new Ray(transform.position, Vector3.down);
-        RaycastHit hit;
         float currentPlayerHeight = 0;
 
-        if (Physics.Raycast(ray, out hit, rayDistance, 1 << LayerMask.NameToLayer(arenaLayerMask)))
-        {
-            currentPlayerHeight = (hit.point - transform.position).magnitude;
-        }
+        raycastPlane.Raycast(ray, out currentPlayerHeight);
 
         if (currentPlayerHeight < slamDistanceToGround)
         {
@@ -114,7 +110,9 @@ public class Player : MonoBehaviour {
 
             rb.AddForce(dir * speed, ForceMode.Force);
 
-            rb.velocity = Vector3.Lerp(rb.velocity, transform.forward, 0.1f);
+            Vector2 vel2d = Vector2.Lerp(rb.velocity.xz(), transform.forward.xz(), 0.1f);
+
+            rb.velocity = new Vector3(vel2d.x, rb.velocity.y, vel2d.y);
 
             Quaternion rotation = Quaternion.LookRotation(dir);
             transform.rotation = Quaternion.Slerp(transform.rotation, rotation, Time.deltaTime * turnSpeed);
