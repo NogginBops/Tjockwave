@@ -34,6 +34,8 @@ public class WaveManager : MonoBehaviour {
     
     public List<Wave> Waves;
 
+    public List<BoxCollider> SpawnAreas;
+
     Queue<Enemy> spawnQueue = new Queue<Enemy>();
 
     float timer;
@@ -90,9 +92,19 @@ public class WaveManager : MonoBehaviour {
 
                 Enemy enemy = spawnQueue.Dequeue();
 
+                BoxCollider spawnArea = SpawnAreas[Random.Range(0, SpawnAreas.Count)];
+
+                Vector3 pos = Random.insideUnitSphere;
+
+                pos.x *= spawnArea.size.x;
+                pos.y *= spawnArea.size.y;
+                pos.z *= spawnArea.size.z;
+
+                pos += spawnArea.center;
+
                 Vector2 randPos = Random.insideUnitCircle * Random.Range(1, 8);
 
-                GameObject enemyGO = Instantiate(enemy.prefab, spawnOffset + new Vector3(randPos.x, 0, randPos.y), Quaternion.identity);
+                GameObject enemyGO = Instantiate(enemy.prefab, spawnArea.transform.position + pos, Quaternion.identity);
 
                 enemyGO.transform.SetParent(enemy.flock.transform);
 
