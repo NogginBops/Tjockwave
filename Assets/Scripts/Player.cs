@@ -35,6 +35,8 @@ public class Player : MonoBehaviour {
 
     public GameObject slamShockwaveParticles;
 
+    public CameraScript cameraScript;
+
     Rigidbody rb;
     Vector3 targetPosition;
 
@@ -47,13 +49,7 @@ public class Player : MonoBehaviour {
         staticG = G;
 
     }
-
-    // Update is called once per frame
-    void Update ()
-    {
-
-    }
-
+    
 	// Update is called once per frame
 	void FixedUpdate () {
 
@@ -87,6 +83,8 @@ public class Player : MonoBehaviour {
             {
                 Instantiate(slamShockWave, transform.position, Quaternion.identity);
                 Instantiate(slamShockwaveParticles, transform.position, Quaternion.Euler(new Vector3(90, 0, 0)));
+
+                cameraScript.ShockwaveCameraEffect();
 
                 // Changes the physics layer of the player and its children.
                 gameObject.layer = LayerMask.NameToLayer("Player");
