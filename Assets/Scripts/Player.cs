@@ -25,8 +25,8 @@ public class Player : MonoBehaviour {
     [Header("Slam settings")]
 
     [Tooltip("The height that the player must be off the ground in order to do a slam attack.")]
-    public float slamJumpHeight;
-    public float slamForce;
+    public float slamMinJumpHeight;
+    public float slamDownForce;
     public float slamDistanceToGround;
     public GameObject slamShockWave;
 
@@ -138,11 +138,11 @@ public class Player : MonoBehaviour {
             if (slamming == false)
             {             
                 // If the player is high up enough in the air...
-                if (currentPlayerHeight > slamJumpHeight)
+                if (currentPlayerHeight > slamMinJumpHeight)
                 {
                     // ... Slam down.
                     Debug.Log("SLAM!");
-                    rb.AddForce(Vector3.down * slamForce);
+                    rb.AddForce(Vector3.down * slamDownForce);
 
                     // Changes the physics layer of the player and its children.
                     gameObject.layer = LayerMask.NameToLayer("PlayerSlam");
