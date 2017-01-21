@@ -35,6 +35,8 @@ public class Player : MonoBehaviour {
     bool slamming = false;
     bool grounded = true;
 
+    float spaceTimer;
+
 	// Use this for initialization
 	void Start () {
         rb = GetComponent<Rigidbody>();
@@ -49,9 +51,16 @@ public class Player : MonoBehaviour {
 	// Update is called once per frame
 	void FixedUpdate () {
 
-        // Gravity
-        if (Input.GetKey(KeyCode.Space) && rb.velocity.y > 0)
+        // Space Timer
+        if (Input.GetKeyUp(KeyCode.Space))
         {
+            spaceTimer = 0;
+        }
+
+        // Gravity
+        if (Input.GetKey(KeyCode.Space) && rb.velocity.y > 0 && spaceTimer < settings.spaceDuration)
+        {
+            spaceTimer += Time.deltaTime;
             settings.G = settings.spaceG;
         }
         else if (rb.velocity.y <= 0 && grounded == false)
@@ -181,14 +190,15 @@ public class Player : MonoBehaviour {
     {
         foodCounter++;
         if (foodCounter - 1 < foodBoostData.Length)
-        {       
-            settings = foodBoostData[foodCounter - 1];
+        {
+            ReplaceSettings(foodBoostData[foodCounter - 1]);
         }
     }
 
     public void ReturnToBaseValues()
     {
-        settings = baseSettings;
+        foodCounter = 0;
+        ReplaceSettings(baseSettings);
     }
 
     [System.Serializable]
@@ -201,6 +211,8 @@ public class Player : MonoBehaviour {
         public float speed;
         public float turnSpeed;
         public float jumpForce;
+
+        public float spaceDuration;
 
         [Tooltip("Gravity")]
         public float G;
@@ -219,5 +231,11 @@ public class Player : MonoBehaviour {
         public float shockForce;
         public float shockSpeed;
         public float shockMaxSize;
+    }
+
+    void ReplaceSettings(FoodBoostData newData)
+    {
+        settings = newData;
+        transform.localScale = newData.scale;
     }
 }
