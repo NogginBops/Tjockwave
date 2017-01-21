@@ -12,21 +12,21 @@ public class FoodController : MonoBehaviour {
     public float spawnHeight;
 
     BoxCollider area;
-    int currentFoodAmount;
+    List<Food> currentFood;
 
 	// Use this for initialization
 	void Start () {
         area = GetComponent<BoxCollider>();
-	}
+        currentFood = new List<Food>();
+    }
 	
 	// Update is called once per frame
 	void Update () {
-        if (currentFoodAmount < maxFood)
+        if (currentFood.Count < maxFood)
         {
             if (Random.Range(0f, 1f) < spawnChance)
-            {         
-                Instantiate(foodPrefab, RandomPos(), Quaternion.identity);
-                currentFoodAmount++;
+            {
+                currentFood.Add(Instantiate(foodPrefab, RandomPos(), Quaternion.identity, transform).GetComponent<Food>());
             }
         }
 	}
@@ -38,5 +38,10 @@ public class FoodController : MonoBehaviour {
             spawnHeight, 
             Random.Range(area.bounds.min.z, area.bounds.max.z)
            );
+    }
+
+    public void RemoveFood(Food food)
+    {
+        currentFood.Remove(food);
     }
 }

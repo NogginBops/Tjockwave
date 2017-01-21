@@ -1821,7 +1821,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   arenaLayerMask: Arena
-  health: 0
+  health: 100
   speed: 20
   maxSpeed: 100
   turnSpeed: 10
@@ -1829,7 +1829,7 @@ MonoBehaviour:
   G: 16
   spaceG: 9
   fallingG: 30
-  slamMinJumpHeight: 2
+  slamMinJumpHeight: 1.5
   slamDownForce: 1000
   slamDistanceToGround: 1
   slamShockWave: {fileID: 1561116392357380, guid: 3457ba11454d261429b64d9dbf5c986a,

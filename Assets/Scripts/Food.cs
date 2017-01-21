@@ -13,4 +13,14 @@ public class Food : MonoBehaviour {
 	void Update () {
 		
 	}
+    
+    void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.tag == "Player")
+        {
+            collision.gameObject.GetComponent<Player>().Eat();
+            GetComponentInParent<FoodController>().RemoveFood(this);
+            Destroy(gameObject);
+        }
+    }
 }

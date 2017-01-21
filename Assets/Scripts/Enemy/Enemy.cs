@@ -23,10 +23,13 @@ public class Enemy : MonoBehaviour {
     {
         if (collision.gameObject.tag != "Enemy")
         {
-            if (collision.impulse.sqrMagnitude > (deathVelocity * deathVelocity))
+            if (collision.gameObject.tag != "Shockwave")
             {
-                Die();
-            }           
+                if (collision.impulse.sqrMagnitude > (deathVelocity * deathVelocity))
+                {
+                    Die();
+                }           
+            }
         }         
 
         if (collision.gameObject.tag == "Player")
