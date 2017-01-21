@@ -10,7 +10,6 @@ public struct FlockSettings
     public float separationAmp;
     public float alignmentAmp;
     public float cohesionAmp;
-    public float centeringAmp;
     public float followPlayerAmp;
 }
 
@@ -20,17 +19,11 @@ public class Flock : MonoBehaviour {
 
     public Transform player;
 
-    List<Rigidbody> boids;
+    List<Rigidbody> boids = new List<Rigidbody>();
 
     public FlockSettings settings;
 
-    Collider[] neighbours;
-    
-    // Use this for initialization
-    void Start () {
-        boids = new List<Rigidbody>();
-        neighbours = new Collider[20];
-	}
+    Collider[] neighbours = new Collider[20];
 	
     void FixedUpdate()
     {
@@ -38,18 +31,17 @@ public class Flock : MonoBehaviour {
         {
             Vector3 pos = boid.position;
 
-            int i = Physics.OverlapSphereNonAlloc(pos, settings.neighborRadius, neighbours, 1 << 9);
-
+            int i = Physics.OverlapSphereNonAlloc(pos, settings.neighborRadius, neighbours, 1 << LayerMask.NameToLayer("Enemy"));
+            
             Vector3 separation = new Vector3();
             Vector3 alignment = new Vector3();
             Vector3 cohesion = new Vector3();
-            Vector3 centering = new Vector3(center.x, 0, center.y) - boid.position;
             Vector3 followPlayer = player.position - boid.position;
 
             foreach (var neighbour in neighbours.Take(i))
             {
                 Vector3 neighbourPos = neighbour.transform.position;
-                separation += -(neighbourPos - pos);
+                separation += pos - neighbourPos;
                 alignment += neighbour.transform.parent.GetComponent<Rigidbody>().velocity;
                 cohesion += neighbourPos;
             }
@@ -62,42 +54,47 @@ public class Flock : MonoBehaviour {
             }
             
             alignment = alignment - boid.velocity;
-            cohesion = cohesion - boid.position;
+            cohesion = -(boid.position - cohesion);
             
             separation.y = 0;
             alignment.y = 0;
             cohesion.y = 0;
-            centering.y = 0;
             followPlayer.y = 0;
 
             separation.Normalize();
             alignment.Normalize();
             cohesion.Normalize();
-            centering.Normalize();
             followPlayer.Normalize();
             
             Debug.DrawRay(boid.position, separation * settings.separationAmp, Color.red);
             Debug.DrawRay(boid.position, alignment * settings.alignmentAmp, Color.green);
             Debug.DrawRay(boid.position, cohesion * settings.cohesionAmp, Color.blue);
-            Debug.DrawRay(boid.position, centering * settings.centeringAmp, Color.magenta);
             Debug.DrawRay(boid.position, followPlayer * settings.followPlayerAmp, Color.cyan);
 
-            boid.AddForce(separation * settings.separationAmp);
-            boid.AddForce(alignment * settings.alignmentAmp);
-            boid.AddForce(cohesion * settings.cohesionAmp);
-            boid.AddForce(centering * settings.centeringAmp);
-            boid.AddForce(followPlayer * settings.followPlayerAmp);
-
-            //boid.AddForce(separation + alignment + cohesion + centering);
-
-            /*
+            if (separation.sqrMagnitude > Mathf.Epsilon)
+                boid.AddForce(separation * settings.separationAmp);
+            if (alignment.sqrMagnitude > Mathf.Epsilon)
+                boid.AddForce(alignment * settings.alignmentAmp);
+            if (cohesion.sqrMagnitude > Mathf.Epsilon)
+                boid.AddForce(cohesion * settings.cohesionAmp);
+            if (followPlayer.sqrMagnitude > Mathf.Epsilon)
+                boid.AddForce(followPlayer * settings.followPlayerAmp);
+            
             if (boid.velocity.magnitude > Mathf.Epsilon)
             {
-                Vector2 forward = Vector2.Lerp(boid.transform.forward, boid.velocity, 0.5f);
-                boid.transform.forward = new Vector3(boid.velocity.x, 0, boid.velocity.y);
+                Vector3 forward = Vector3.Lerp(boid.transform.forward, boid.velocity, 0.5f);
+                forward.y = 0;
+                boid.transform.forward = forward;
             }
-            */
         }
+    }
+
+    public void OnDrawGizmos()
+    {
+        /*foreach (var boid in boids)
+        {
+            //Gizmos.DrawWireSphere(boid.position, settings.neighborRadius);
+        }*/
     }
 
     public void AddBoid(Rigidbody boid)
@@ -108,5 +105,10 @@ public class Flock : MonoBehaviour {
     public void RemoveBoid(Rigidbody boid)
     {
         boids.Remove(boid);
+    }
+
+    public bool IsEmpty()
+    {
+        return boids.Count <= 0;
     }
 }

@@ -10,6 +10,7 @@ public class WaveManager : MonoBehaviour {
         public int enemyCount;
         public float waveDuration;
         public GameObject enemyPrefab;
+        public Flock flock;
     }
 
     public struct Enemy
@@ -40,7 +41,7 @@ public class WaveManager : MonoBehaviour {
 
     float timer;
 
-    int currWave = 0;
+    public int currWave = 0;
     
 	// Use this for initialization
 	void Start () {
@@ -52,6 +53,11 @@ public class WaveManager : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 
+        if (currWave + 1 >= Waves.Count)
+        {
+            return;
+        }
+
         timer += Time.deltaTime;
 
         Waves[currWave].waveDuration -= Time.deltaTime;
@@ -62,8 +68,26 @@ public class WaveManager : MonoBehaviour {
 
             LoadWave(currWave);
         }
-
+        else if (Waves[currWave].flock.IsEmpty() && spawning == false)
+        {
+            StartCoroutine(LoadWaveDelayed(2));
+        }
 	}
+
+    bool spawning;
+    
+    IEnumerator LoadWaveDelayed(int seconds)
+    {
+        spawning = true;
+
+        yield return new WaitForSeconds(seconds);
+        
+        currWave++;
+
+        LoadWave(currWave);
+
+        spawning = false;
+    }
 
     void LoadWave(int wave)
     {
@@ -77,8 +101,13 @@ public class WaveManager : MonoBehaviour {
 
         flock.player = player;
 
+        Waves[wave].flock = flock;
+
+        // Spawn initial enemy
+        SpawnEnemy(new Enemy(Waves[wave].enemyPrefab, flock));
+
         //Queue up enemies to spawn
-        for (int i = 0; i < Waves[wave].enemyCount; i++)
+        for (int i = 0; i < Waves[wave].enemyCount - 1; i++)
         {
             spawnQueue.Enqueue(new Enemy(Waves[wave].enemyPrefab, flock));
         }
@@ -89,29 +118,31 @@ public class WaveManager : MonoBehaviour {
         while (true)
         {
             if (spawnQueue.Count > 0) {
-
-                Enemy enemy = spawnQueue.Dequeue();
-
-                BoxCollider spawnArea = SpawnAreas[Random.Range(0, SpawnAreas.Count)];
-
-                Vector3 pos = Random.insideUnitSphere;
-
-                pos.x *= spawnArea.size.x;
-                pos.y *= spawnArea.size.y;
-                pos.z *= spawnArea.size.z;
-
-                pos += spawnArea.center;
                 
-                GameObject enemyGO = Instantiate(enemy.prefab, spawnArea.transform.position + pos, Quaternion.identity);
+                SpawnEnemy(spawnQueue.Dequeue());
 
-                enemyGO.transform.SetParent(enemy.flock.transform);
-
-                //enemyGO.GetComponent<Rigidbody>().velocity = new Vector3(randPos.x, 0, randPos.y) * 4;
-
-                enemy.flock.AddBoid(enemyGO.GetComponent<Rigidbody>());
             }
 
             yield return new WaitForSeconds(enemySpawnDelay);
         }
+    }
+
+    void SpawnEnemy(Enemy enemy)
+    {
+        BoxCollider spawnArea = SpawnAreas[Random.Range(0, SpawnAreas.Count)];
+
+        Vector3 pos = Random.insideUnitSphere;
+
+        pos.x *= spawnArea.size.x;
+        pos.y *= spawnArea.size.y;
+        pos.z *= spawnArea.size.z;
+
+        pos += spawnArea.center;
+
+        GameObject enemyGO = Instantiate(enemy.prefab, spawnArea.transform.position + pos, Quaternion.identity);
+
+        enemyGO.transform.SetParent(enemy.flock.transform);
+
+        enemy.flock.AddBoid(enemyGO.GetComponent<Rigidbody>());
     }
 }

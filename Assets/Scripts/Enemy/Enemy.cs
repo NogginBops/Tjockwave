@@ -8,12 +8,9 @@ public class Enemy : MonoBehaviour {
     public float damage;
 
     public float deathVelocity;
-
-    Rigidbody rb;
-
+    
 	// Use this for initialization
 	void Start () {
-        rb = GetComponent<Rigidbody>();
 
     }
 	
