@@ -23,6 +23,7 @@ GameObject:
   - component: {fileID: 92815315391237668}
   - component: {fileID: 124761071601840398}
   - component: {fileID: 81013936421492832}
+  - component: {fileID: 114952904977807924}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -164,7 +165,18 @@ MonoBehaviour:
   pivot: {fileID: 4258374615503446}
   cameraTransform: {fileID: 4719132025824038}
   player: {fileID: 0}
-  rotationAmp: -5
+  rotationAmp: -4
+--- !u!114 &114952904977807924
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1201209982507770}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ba22f105d37c40f49a24d19dcda4c766, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!124 &124761071601840398
 Behaviour:
   m_ObjectHideFlags: 1

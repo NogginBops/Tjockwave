@@ -16,9 +16,7 @@ public class CameraScript : MonoBehaviour {
     Vector3 originPos;
 
     public float rotationAmp;
-
-    bool slowMo;
-
+    
     // Use this for initialization
     void Start()
     {
@@ -35,11 +33,8 @@ public class CameraScript : MonoBehaviour {
         transform.position = (originPos + player.position) / 2;
 
         float xOffset = (originPos - transform.position).x;
-
-        if (slowMo == false)
-        {
-            transform.eulerAngles = new Vector3(transform.eulerAngles.x, xOffset * rotationAmp, transform.eulerAngles.z);
-        }
+        
+        transform.eulerAngles = new Vector3(transform.eulerAngles.x, xOffset * rotationAmp, transform.eulerAngles.z);
     }
 
     public void ShockwaveCameraEffect()
