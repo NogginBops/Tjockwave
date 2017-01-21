@@ -183,6 +183,7 @@ public class Player : MonoBehaviour {
         if (foodCounter - 1 < foodBoostData.Length)
         {       
             settings = foodBoostData[foodCounter - 1];
+            transform.localScale = settings.scale;
         }
     }
 
