@@ -10,44 +10,24 @@ public class Player : MonoBehaviour {
     
     public float health;
 
-    [Header("Movement settings")]
-
-    public float speed;
-    public float turnSpeed;
-    public float jumpForce;
-
-    [Tooltip("Gravity")]
-    public float G;
-    [Tooltip("The amount of gravity that will work on the player when you hold space.")]
-    public float spaceG;
-    [Tooltip("The amount of gravity that will work on the player when you fall.")]
-    public float fallingG;
-    float staticG;
-
-    [Header("Slam settings")]
-
-    [Tooltip("The height that the player must be off the ground in order to do a slam attack.")]
-    public float slamMinJumpHeight;
-    public float slamDownForce;
-    public float slamDistanceToGround;
-    public GameObject slamShockWave;
-
-    public GameObject slamShockwaveParticles;
-    
-    public CameraScript cameraScript;
+    public FoodBoostData settings;
+    FoodBoostData baseSettings;
 
     [Header("Food settings")]
     public int foodCounter;
 
-    public float healthMultiplier;
-    public float speedDivisor;
-    public float scaleMultiplier;
+    [Header("Shockwave prefabs")]
+    public GameObject slamShockwaveParticles;
+    public GameObject slamShockWave;
+
+    public CameraScript cameraScript;
 
     [Tooltip("The stats the player will have at every food count. Element 0 is 1 food.")]
     public FoodBoostData[] foodBoostData;
 
     float baseHealth;
     float baseSpeed;
+    float staticG;
 
     Rigidbody rb;
     Vector3 targetPosition;
@@ -59,9 +39,10 @@ public class Player : MonoBehaviour {
 	void Start () {
         rb = GetComponent<Rigidbody>();
 
-        staticG = G;
+        baseSettings = settings;
+        staticG = settings.G;
         baseHealth = health;
-        baseSpeed = speed;
+        baseSpeed = settings.speed;
 
     }
     
@@ -71,18 +52,18 @@ public class Player : MonoBehaviour {
         // Gravity
         if (Input.GetKey(KeyCode.Space) && rb.velocity.y > 0)
         {
-            G = spaceG;
+            settings.G = settings.spaceG;
         }
         else if (rb.velocity.y <= 0 && grounded == false)
         {
-            G = fallingG;
+            settings.G = settings.fallingG;
         }
         else
         {
-            G = staticG;
+            settings.G = staticG;
         }
 
-        rb.AddForce(Vector3.down * G * rb.mass);
+        rb.AddForce(Vector3.down * settings.G * rb.mass);
 
         // Measures the height the player is off the ground.
         Ray ray = new Ray(transform.position, Vector3.down);
@@ -90,13 +71,14 @@ public class Player : MonoBehaviour {
 
         raycastPlane.Raycast(ray, out currentPlayerHeight);
 
-        if (currentPlayerHeight < slamDistanceToGround)
+        if (currentPlayerHeight < settings.slamDistanceToGround)
         {
             grounded = true;
 
             if (slamming == true)
             {
-                Instantiate(slamShockWave, transform.position, Quaternion.identity);
+                ShockWave shockWave = Instantiate(slamShockWave, transform.position, Quaternion.identity).GetComponent<ShockWave>();
+
                 Instantiate(slamShockwaveParticles, transform.position, Quaternion.Euler(new Vector3(90, 0, 0)));
 
                 cameraScript.ShockwaveCameraEffect();
@@ -132,14 +114,14 @@ public class Player : MonoBehaviour {
             dir.y = 0;
             dir.Normalize();
 
-            rb.AddForce(dir * speed, ForceMode.Force);
+            rb.AddForce(dir * settings.speed, ForceMode.Force);
 
             Vector2 vel2d = Vector2.Lerp(rb.velocity.xz(), transform.forward.xz(), 0.1f);
 
             rb.velocity = new Vector3(vel2d.x, rb.velocity.y, vel2d.y);
 
             Quaternion rotation = Quaternion.LookRotation(dir);
-            transform.rotation = Quaternion.Slerp(transform.rotation, rotation, Time.deltaTime * turnSpeed);
+            transform.rotation = Quaternion.Slerp(transform.rotation, rotation, Time.deltaTime * settings.turnSpeed);
         }
         else
         {
@@ -151,7 +133,7 @@ public class Player : MonoBehaviour {
         {
             if (grounded)
             {
-                rb.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
+                rb.AddForce(Vector3.up * settings.jumpForce, ForceMode.Impulse);
             }
         }
 
@@ -160,11 +142,11 @@ public class Player : MonoBehaviour {
             if (slamming == false && foodCounter > 0)
             {             
                 // If the player is high up enough in the air...
-                if (currentPlayerHeight > slamMinJumpHeight)
+                if (currentPlayerHeight > settings.slamMinJumpHeight)
                 {
                     // ... Slam down.
                     Debug.Log("SLAM!");
-                    rb.AddForce(Vector3.down * slamDownForce);
+                    rb.AddForce(Vector3.down * settings.slamDownForce);
 
                     // Changes the physics layer of the player and its children.
                     gameObject.layer = LayerMask.NameToLayer("PlayerSlam");
@@ -197,28 +179,42 @@ public class Player : MonoBehaviour {
         foodCounter++;
         if (foodCounter - 1 < foodBoostData.Length)
         {       
-            health = foodBoostData[foodCounter - 1].health;
-            speed = foodBoostData[foodCounter - 1].speed;
-            transform.localScale = foodBoostData[foodCounter - 1].scale;
-            slamDistanceToGround = foodBoostData[foodCounter - 1].slamDistanceToGround;
+            settings = foodBoostData[foodCounter - 1];
         }
     }
 
     public void ReturnToBaseValues()
     {
-        foodCounter = 0;
-        health = baseHealth;
-        speed = baseSpeed;
-        transform.localScale = Vector3.one;
-        slamDistanceToGround = transform.localScale.x;
+        settings = baseSettings;
     }
 
     [System.Serializable]
     public struct FoodBoostData
     {
-        public float health;
-        public float speed;
         public Vector3 scale;
+
+        [Header("Movement settings")]
+
+        public float speed;
+        public float turnSpeed;
+        public float jumpForce;
+
+        [Tooltip("Gravity")]
+        public float G;
+        [Tooltip("The amount of gravity that will work on the player when you hold space.")]
+        public float spaceG;
+        [Tooltip("The amount of gravity that will work on the player when you fall.")]
+        public float fallingG;
+
+        [Header("Slam settings")]
+
+        [Tooltip("The height that the player must be off the ground in order to do a slam attack.")]
+        public float slamMinJumpHeight;
+        public float slamDownForce;
         public float slamDistanceToGround;
+
+        public float shockForce;
+        public float shockSpeed;
+        public float shockMaxSize;
     }
 }

@@ -2538,11 +2538,6 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 114775506347471726, guid: d412c9757f38ef54eab5ae542b1e689d,
-        type: 2}
-      propertyPath: foodBoostData.Array.size
-      value: 2
-      objectReference: {fileID: 0}
     - target: {fileID: 4025134175527272, guid: d412c9757f38ef54eab5ae542b1e689d, type: 2}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -2580,51 +2575,6 @@ Prefab:
       propertyPath: cameraScript
       value: 
       objectReference: {fileID: 9343706}
-    - target: {fileID: 114775506347471726, guid: d412c9757f38ef54eab5ae542b1e689d,
-        type: 2}
-      propertyPath: foodBoostData.Array.data[0].speed
-      value: 25
-      objectReference: {fileID: 0}
-    - target: {fileID: 114775506347471726, guid: d412c9757f38ef54eab5ae542b1e689d,
-        type: 2}
-      propertyPath: foodBoostData.Array.data[0].health
-      value: 150
-      objectReference: {fileID: 0}
-    - target: {fileID: 114775506347471726, guid: d412c9757f38ef54eab5ae542b1e689d,
-        type: 2}
-      propertyPath: foodBoostData.Array.data[0].slamDistanceToGround
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 114775506347471726, guid: d412c9757f38ef54eab5ae542b1e689d,
-        type: 2}
-      propertyPath: foodBoostData.Array.data[1].health
-      value: 200
-      objectReference: {fileID: 0}
-    - target: {fileID: 114775506347471726, guid: d412c9757f38ef54eab5ae542b1e689d,
-        type: 2}
-      propertyPath: foodBoostData.Array.data[1].speed
-      value: 20
-      objectReference: {fileID: 0}
-    - target: {fileID: 114775506347471726, guid: d412c9757f38ef54eab5ae542b1e689d,
-        type: 2}
-      propertyPath: foodBoostData.Array.data[1].scale.x
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 114775506347471726, guid: d412c9757f38ef54eab5ae542b1e689d,
-        type: 2}
-      propertyPath: foodBoostData.Array.data[1].scale.y
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 114775506347471726, guid: d412c9757f38ef54eab5ae542b1e689d,
-        type: 2}
-      propertyPath: foodBoostData.Array.data[1].scale.z
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 114775506347471726, guid: d412c9757f38ef54eab5ae542b1e689d,
-        type: 2}
-      propertyPath: foodBoostData.Array.data[1].slamDistanceToGround
-      value: 3
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: d412c9757f38ef54eab5ae542b1e689d, type: 2}
   m_IsPrefabParent: 0
