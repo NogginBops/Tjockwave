@@ -1332,6 +1332,18 @@ Prefab:
       propertyPath: fallingG
       value: 30
       objectReference: {fileID: 0}
+    - target: {fileID: 1044558790639606, guid: d412c9757f38ef54eab5ae542b1e689d, type: 2}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 1988594445838686, guid: d412c9757f38ef54eab5ae542b1e689d, type: 2}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 1863824159110648, guid: d412c9757f38ef54eab5ae542b1e689d, type: 2}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: d412c9757f38ef54eab5ae542b1e689d, type: 2}
   m_IsPrefabParent: 0

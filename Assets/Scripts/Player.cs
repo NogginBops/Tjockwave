@@ -42,7 +42,13 @@ public class Player : MonoBehaviour {
         staticG = G;
 
     }
-	
+
+    // Update is called once per frame
+    void Update ()
+    {
+
+    }
+
 	// Update is called once per frame
 	void FixedUpdate () {
 
@@ -75,6 +81,14 @@ public class Player : MonoBehaviour {
             if (slamming == true)
             {
                 Instantiate(slamShockWave, transform.position, Quaternion.identity);
+
+                // Changes the physics layer of the player and its children.
+                gameObject.layer = LayerMask.NameToLayer("Player");
+                for (int i = 0; i < transform.childCount; i++)
+                {
+                    transform.GetChild(i).gameObject.layer = LayerMask.NameToLayer("Player");
+                }
+
                 slamming = false;
             }
         }
@@ -129,6 +143,14 @@ public class Player : MonoBehaviour {
                     // ... Slam down.
                     Debug.Log("SLAM!");
                     rb.AddForce(Vector3.down * slamForce);
+
+                    // Changes the physics layer of the player and its children.
+                    gameObject.layer = LayerMask.NameToLayer("PlayerSlam");
+                    for (int i = 0; i < transform.childCount; i++)
+                    {
+                        transform.GetChild(i).gameObject.layer = LayerMask.NameToLayer("PlayerSlam");
+                    }
+
                     slamming = true;
                 }
             }
