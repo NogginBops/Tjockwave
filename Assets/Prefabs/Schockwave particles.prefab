@@ -53,6 +53,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7c4b0c6262d3d3346989695de570817b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ps: {fileID: 0}
 --- !u!198 &198402903053288102
 ParticleSystem:
   m_ObjectHideFlags: 1
@@ -108,7 +109,7 @@ ParticleSystem:
   moveWithTransform: 1
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
-  randomSeed: -1631431811
+  randomSeed: -332945873
   InitialModule:
     serializedVersion: 3
     enabled: 1
@@ -2651,7 +2652,7 @@ ParticleSystemRenderer:
   m_ReflectionProbeUsage: 0
   m_Materials:
   - {fileID: 2100000, guid: 7242e7245b29ade439788fc40715a4dc, type: 2}
-  - {fileID: 10301, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 162fdc593bdd07a49bac0911b238ed4d, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
