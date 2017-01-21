@@ -11,6 +11,7 @@ public struct FlockSettings
     public float alignmentAmp;
     public float cohesionAmp;
     public float followPlayerAmp;
+    public float maxSpeed;
 }
 
 public class Flock : MonoBehaviour {
@@ -71,7 +72,7 @@ public class Flock : MonoBehaviour {
             Debug.DrawRay(boid.position, cohesion * settings.cohesionAmp, Color.blue);
             Debug.DrawRay(boid.position, followPlayer * settings.followPlayerAmp, Color.cyan);
 
-            /*
+            
             if (separation.sqrMagnitude > Mathf.Epsilon)
                 boid.AddForce(separation * settings.separationAmp);
             if (alignment.sqrMagnitude > Mathf.Epsilon)
@@ -80,17 +81,7 @@ public class Flock : MonoBehaviour {
                 boid.AddForce(cohesion * settings.cohesionAmp);
             if (followPlayer.sqrMagnitude > Mathf.Epsilon)
                 boid.AddForce(followPlayer * settings.followPlayerAmp);
-            */
-
-            Vector3 vel = followPlayer;
-
-            vel.y = 0;
-
-            vel.Normalize();
             
-            //vel.y = boid.velocity.y;
-
-            boid.velocity += vel * settings.followPlayerAmp;
 
             if (boid.velocity.magnitude > Mathf.Epsilon)
             {
