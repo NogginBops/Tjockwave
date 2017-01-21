@@ -76,7 +76,5 @@ MonoBehaviour:
     enemyPrefab: {fileID: 1904599184031766, guid: 16868e291f230014a8b0720380457b6d,
       type: 2}
     flock: {fileID: 0}
-  SpawnAreas:
-  - {fileID: 0}
-  - {fileID: 0}
+  SpawnAreas: []
   currWave: 0
