@@ -147,6 +147,7 @@ GameObject:
   - component: {fileID: 33402316622863570}
   - component: {fileID: 23670303510259564}
   - component: {fileID: 64555591098412306}
+  - component: {fileID: 64574831275118362}
   m_Layer: 0
   m_Name: stall_04_polySurface33
   m_TagString: Untagged
@@ -216,8 +217,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1334147522649204}
-  m_LocalRotation: {x: -0, y: -0.7071068, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: 17.747139, y: 0, z: 1}
+  m_LocalRotation: {x: -0, y: 0.7071068, z: -0, w: 0.7071068}
+  m_LocalPosition: {x: -16.6, y: 0, z: 1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4905669228625646}
@@ -259,8 +260,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1620141917994480}
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: -0.07, z: 3.44}
-  m_LocalScale: {x: 1.2019954, y: 1.2019955, z: 1.2019955}
+  m_LocalPosition: {x: 0, y: 0.02, z: 3.21}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4336441932304092}
   m_Father: {fileID: 4579641786109352}
@@ -371,6 +372,20 @@ MeshCollider:
   m_InflateMesh: 0
   m_SkinWidth: 0.01
   m_Mesh: {fileID: 4300002, guid: f957fc7f17f66884ba0b31c7cdb23447, type: 3}
+--- !u!64 &64574831275118362
+MeshCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1994501543044370}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Convex: 1
+  m_InflateMesh: 0
+  m_SkinWidth: 0.01
+  m_Mesh: {fileID: 4300002, guid: f957fc7f17f66884ba0b31c7cdb23447, type: 3}
 --- !u!95 &95266427330999360
 Animator:
   serializedVersion: 3
@@ -380,7 +395,7 @@ Animator:
   m_GameObject: {fileID: 1334147522649204}
   m_Enabled: 1
   m_Avatar: {fileID: 9000000, guid: f957fc7f17f66884ba0b31c7cdb23447, type: 3}
-  m_Controller: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: ad0ee1c7419880e468e7eee2526b00d3, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
