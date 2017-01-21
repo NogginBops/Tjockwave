@@ -109,15 +109,4 @@ public class Flock : MonoBehaviour {
     {
         boids.Remove(boid);
     }
-
-    void OnDrawGizmos()
-    {
-        Gizmos.color = Color.blue;
-        foreach (var boid in boids)
-        {
-            //Gizmos.DrawWireSphere(boid.position, neighborRadius);
-        }
-
-        Gizmos.DrawCube(new Vector3(center.x, 0, center.y), Vector3.one);
-    }
 }

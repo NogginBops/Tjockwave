@@ -40,7 +40,7 @@ GameObject:
   - component: {fileID: 54917158172785234}
   m_Layer: 11
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -207,11 +207,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   arenaLayerMask: Arena
-  speed: 15
-  maxSpeed: 5
+  health: 0
+  speed: 20
+  maxSpeed: 100
   turnSpeed: 10
-  jumpForce: 8
-  fallingG: 0
+  jumpForce: 10
+  fallingG: 30
   G: 11
   slamJumpHeight: 2
   slamForce: 1000

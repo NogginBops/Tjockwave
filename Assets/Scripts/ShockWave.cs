@@ -6,6 +6,7 @@ public class ShockWave : MonoBehaviour {
 
     public float speed = 1.2f;
     public float maxSize = 10;
+    public float force = 100;
 
 	// Use this for initialization
 	void Start () {
@@ -23,5 +24,16 @@ public class ShockWave : MonoBehaviour {
         {
             transform.localScale += transform.localScale * (Time.fixedDeltaTime * speed);
         }      
+    }
+
+    void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.tag == "Enemy")
+        {
+            Vector3 shockWave = collision.gameObject.transform.position - transform.position;
+            collision.gameObject.GetComponent<Rigidbody>().AddForce(shockWave.normalized * force);
+            Debug.DrawRay(collision.gameObject.transform.position, shockWave.normalized * force);
+            Debug.Log("Shockwaved!");
+        }
     }
 }
