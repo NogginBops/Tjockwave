@@ -21,13 +21,13 @@ GameObject:
   - component: {fileID: 4497960565530656}
   - component: {fileID: 33485018886220124}
   - component: {fileID: 23372817639464642}
-  - component: {fileID: 65761428175264786}
+  - component: {fileID: 64733486310124066}
   m_Layer: 0
   m_Name: stall_corner_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &4497960565530656
 Transform:
@@ -80,8 +80,8 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1626212238414440}
   m_Mesh: {fileID: 4300006, guid: f77ba32c2062814418ecf4cc89382700, type: 3}
---- !u!65 &65761428175264786
-BoxCollider:
+--- !u!64 &64733486310124066
+MeshCollider:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
@@ -90,5 +90,7 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 10.757028, y: 12.815362, z: 10.716094}
-  m_Center: {x: 0.62537855, y: 6.4075933, z: 0.64839476}
+  m_Convex: 1
+  m_InflateMesh: 0
+  m_SkinWidth: 0.01
+  m_Mesh: {fileID: 4300006, guid: f77ba32c2062814418ecf4cc89382700, type: 3}

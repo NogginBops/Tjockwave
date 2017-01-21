@@ -61,9 +61,9 @@ public class Flock : MonoBehaviour {
             cohesion.y = 0;
             followPlayer.y = 0;
 
-            separation.Normalize();
-            alignment.Normalize();
-            cohesion.Normalize();
+            //separation.Normalize();
+            //alignment.Normalize();
+            //cohesion.Normalize();
             followPlayer.Normalize();
             
             Debug.DrawRay(boid.position, separation * settings.separationAmp, Color.red);
