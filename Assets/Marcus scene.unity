@@ -2125,6 +2125,7 @@ MonoBehaviour:
     alignmentAmp: 0
     cohesionAmp: 0
     followPlayerAmp: 6.5
+    maxSpeed: 0
   Waves:
   - enemyCount: 50
     waveDuration: 500
