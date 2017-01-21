@@ -9,7 +9,6 @@ public class Player : MonoBehaviour {
     public string arenaLayerMask;
     
     public float health;
-    float baseHealth;
 
     [Header("Movement settings")]
 
@@ -37,9 +36,14 @@ public class Player : MonoBehaviour {
     public GameObject slamShockwaveParticles;
 
     [Header("Food settings")]
+    public int foodCounter;
+
     public float healthMultiplier;
     public float speedDivisor;
     public float scaleMultiplier;
+
+    float baseHealth;
+    float baseSpeed;
 
     Rigidbody rb;
     Vector3 targetPosition;
@@ -50,8 +54,10 @@ public class Player : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
         rb = GetComponent<Rigidbody>();
+
         staticG = G;
         baseHealth = health;
+        baseSpeed = speed;
 
     }
 
@@ -102,6 +108,7 @@ public class Player : MonoBehaviour {
                     transform.GetChild(i).gameObject.layer = LayerMask.NameToLayer("Player");
                 }
 
+                ReturnToBaseValues();
                 slamming = false;
             }
         }
@@ -150,7 +157,7 @@ public class Player : MonoBehaviour {
 
         if (Input.GetMouseButtonDown(1))
         {
-            if (slamming == false)
+            if (slamming == false && foodCounter > 0)
             {             
                 // If the player is high up enough in the air...
                 if (currentPlayerHeight > slamMinJumpHeight)
@@ -187,8 +194,19 @@ public class Player : MonoBehaviour {
 
     public void Eat()
     {
+        foodCounter++;
         health *= healthMultiplier;
         speed /= speedDivisor;
         transform.localScale *= scaleMultiplier;
+        slamDistanceToGround = transform.localScale.x;
+    }
+
+    public void ReturnToBaseValues()
+    {
+        foodCounter = 0;
+        health = baseHealth;
+        speed = baseSpeed;
+        transform.localScale = Vector3.one;
+        slamDistanceToGround = transform.localScale.x;
     }
 }
