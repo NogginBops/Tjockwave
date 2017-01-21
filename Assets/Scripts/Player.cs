@@ -9,6 +9,7 @@ public class Player : MonoBehaviour {
     public string arenaLayerMask;
     
     public float health;
+    float baseHealth;
 
     [Header("Movement settings")]
 
@@ -35,6 +36,11 @@ public class Player : MonoBehaviour {
 
     public GameObject slamShockwaveParticles;
 
+    [Header("Food settings")]
+    public float healthMultiplier;
+    public float speedDivisor;
+    public float scaleMultiplier;
+
     Rigidbody rb;
     Vector3 targetPosition;
 
@@ -45,6 +51,7 @@ public class Player : MonoBehaviour {
 	void Start () {
         rb = GetComponent<Rigidbody>();
         staticG = G;
+        baseHealth = health;
 
     }
 
@@ -176,5 +183,12 @@ public class Player : MonoBehaviour {
             health = 0;
             Debug.Log("WASTED!");
         }
+    }
+
+    public void Eat()
+    {
+        health *= healthMultiplier;
+        speed /= speedDivisor;
+        transform.localScale *= scaleMultiplier;
     }
 }
