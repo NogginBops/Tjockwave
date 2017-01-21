@@ -111,6 +111,8 @@ public class WaveManager : MonoBehaviour {
         {
             spawnQueue.Enqueue(new Enemy(Waves[wave].enemyPrefab, flock));
         }
+
+        UIController.Instance.SetCurrentWave(wave + 1);
     }
 
     IEnumerator SpawnEnemies()

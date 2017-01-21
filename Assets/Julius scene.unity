@@ -487,6 +487,12 @@ Transform:
   m_PrefabParentObject: {fileID: 4497960565530656, guid: 82eaa6cfd766b2242a89a2cc3683403b,
     type: 2}
   m_PrefabInternal: {fileID: 526637193}
+--- !u!114 &225521758 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114892697963931700, guid: 1ba85af32890eba478bc749b3a02dc91,
+    type: 2}
+  m_PrefabInternal: {fileID: 839595650}
+  m_Script: {fileID: 11500000, guid: b8bf13ab44c5eeb43b5715719b9b707c, type: 3}
 --- !u!1001 &293066017
 Prefab:
   m_ObjectHideFlags: 0
@@ -849,6 +855,36 @@ Prefab:
       propertyPath: m_CastShadows
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 114775506347471726, guid: d412c9757f38ef54eab5ae542b1e689d,
+        type: 2}
+      propertyPath: ui
+      value: 
+      objectReference: {fileID: 225521758}
+    - target: {fileID: 114775506347471726, guid: d412c9757f38ef54eab5ae542b1e689d,
+        type: 2}
+      propertyPath: foodCounter
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 54917158172785234, guid: d412c9757f38ef54eab5ae542b1e689d,
+        type: 2}
+      propertyPath: m_UseGravity
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114775506347471726, guid: d412c9757f38ef54eab5ae542b1e689d,
+        type: 2}
+      propertyPath: settings.spaceG
+      value: -2
+      objectReference: {fileID: 0}
+    - target: {fileID: 114775506347471726, guid: d412c9757f38ef54eab5ae542b1e689d,
+        type: 2}
+      propertyPath: settings.G
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114775506347471726, guid: d412c9757f38ef54eab5ae542b1e689d,
+        type: 2}
+      propertyPath: settings.fallingG
+      value: 6
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: d412c9757f38ef54eab5ae542b1e689d, type: 2}
   m_IsPrefabParent: 0
@@ -1206,19 +1242,9 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 223453418643516808, guid: 1ba85af32890eba478bc749b3a02dc91,
         type: 2}
-      propertyPath: m_RenderMode
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 223453418643516808, guid: 1ba85af32890eba478bc749b3a02dc91,
-        type: 2}
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 679795470}
-    - target: {fileID: 224407552776426266, guid: 1ba85af32890eba478bc749b3a02dc91,
-        type: 2}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 180
-      objectReference: {fileID: 0}
     - target: {fileID: 224468828426588522, guid: 1ba85af32890eba478bc749b3a02dc91,
         type: 2}
       propertyPath: m_AnchorMax.x
@@ -1227,11 +1253,6 @@ Prefab:
     - target: {fileID: 224468828426588522, guid: 1ba85af32890eba478bc749b3a02dc91,
         type: 2}
       propertyPath: m_AnchorMax.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 114950652501607974, guid: 1ba85af32890eba478bc749b3a02dc91,
-        type: 2}
-      propertyPath: m_Value
       value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
