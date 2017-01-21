@@ -54,7 +54,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 30
   maxSize: 10
+<<<<<<< Updated upstream
   force: 2000
+=======
+  force: 500
+>>>>>>> Stashed changes
 --- !u!135 &135869358878966126
 SphereCollider:
   m_ObjectHideFlags: 1
