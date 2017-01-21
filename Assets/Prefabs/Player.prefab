@@ -1840,6 +1840,15 @@ MonoBehaviour:
   healthMultiplier: 1.1
   speedDivisor: 1
   scaleMultiplier: 1.2
+  foodBoostData:
+  - health: 150
+    speed: 25
+    scale: {x: 2, y: 2, z: 2}
+    slamDistanceToGround: 2
+  - health: 200
+    speed: 20
+    scale: {x: 3, y: 3, z: 3}
+    slamDistanceToGround: 3
 --- !u!136 &136926852705379678
 CapsuleCollider:
   m_ObjectHideFlags: 1
