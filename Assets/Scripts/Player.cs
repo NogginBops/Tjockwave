@@ -43,6 +43,9 @@ public class Player : MonoBehaviour {
     public float speedDivisor;
     public float scaleMultiplier;
 
+    [Tooltip("The stats the player will have at every food count. Element 0 is 1 food.")]
+    public FoodBoostData[] foodBoostData;
+
     float baseHealth;
     float baseSpeed;
 
@@ -51,7 +54,7 @@ public class Player : MonoBehaviour {
 
     bool slamming = false;
     bool grounded = true;
-    
+
 	// Use this for initialization
 	void Start () {
         rb = GetComponent<Rigidbody>();
@@ -192,10 +195,13 @@ public class Player : MonoBehaviour {
     public void Eat()
     {
         foodCounter++;
-        health *= healthMultiplier;
-        speed /= speedDivisor;
-        transform.localScale *= scaleMultiplier;
-        slamDistanceToGround = transform.localScale.x;
+        if (foodCounter - 1 < foodBoostData.Length)
+        {       
+            health = foodBoostData[foodCounter - 1].health;
+            speed = foodBoostData[foodCounter - 1].speed;
+            transform.localScale = foodBoostData[foodCounter - 1].scale;
+            slamDistanceToGround = foodBoostData[foodCounter - 1].slamDistanceToGround;
+        }
     }
 
     public void ReturnToBaseValues()
@@ -205,5 +211,14 @@ public class Player : MonoBehaviour {
         speed = baseSpeed;
         transform.localScale = Vector3.one;
         slamDistanceToGround = transform.localScale.x;
+    }
+
+    [System.Serializable]
+    public struct FoodBoostData
+    {
+        public float health;
+        public float speed;
+        public Vector3 scale;
+        public float slamDistanceToGround;
     }
 }
