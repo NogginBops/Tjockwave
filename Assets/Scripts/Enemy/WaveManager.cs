@@ -143,6 +143,8 @@ public class WaveManager : MonoBehaviour {
 
         enemyGO.transform.SetParent(enemy.flock.transform);
 
+        enemyGO.transform.localScale = Vector3.one * Random.Range(0.4f, 1.6f);
+
         enemy.flock.AddBoid(enemyGO.GetComponent<Rigidbody>());
     }
 }
