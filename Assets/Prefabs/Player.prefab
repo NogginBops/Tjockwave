@@ -1718,7 +1718,7 @@ MonoBehaviour:
     speed: 35
     turnSpeed: 30
     jumpForce: 7
-    spaceDuration: 0
+    spaceDuration: 1
     G: 16
     spaceG: 9
     fallingG: 30
