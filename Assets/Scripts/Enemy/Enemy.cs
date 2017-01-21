@@ -7,10 +7,15 @@ public class Enemy : MonoBehaviour {
     public float health;
     public float damage;
 
+    public float deathVelocity;
+
+    Rigidbody rb;
+
 	// Use this for initialization
 	void Start () {
-		
-	}
+        rb = GetComponent<Rigidbody>();
+
+    }
 	
 	// Update is called once per frame
 	void Update () {
@@ -19,6 +24,14 @@ public class Enemy : MonoBehaviour {
 
     void OnCollisionEnter(Collision collision)
     {
+        if (collision.gameObject.tag != "Ground")
+        {         
+            if (rb.velocity.magnitude > deathVelocity)
+            {
+                Die();
+            }
+        }
+
         if (collision.gameObject.tag == "Player")
         {
             collision.gameObject.GetComponent<Player>().Hurt(damage);

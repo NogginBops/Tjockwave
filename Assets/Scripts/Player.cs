@@ -16,10 +16,13 @@ public class Player : MonoBehaviour {
     public float maxSpeed;
     public float turnSpeed;
     public float jumpForce;
-    public float fallingG;
 
     [Tooltip("Gravity")]
     public float G;
+    [Tooltip("The amount of gravity that will work on the player when you hold space.")]
+    public float spaceG;
+    [Tooltip("The amount of gravity that will work on the player when you fall.")]
+    public float fallingG;
     float staticG;
 
     [Header("Slam settings")]
@@ -55,7 +58,11 @@ public class Player : MonoBehaviour {
 	void FixedUpdate () {
 
         // Gravity
-        if (rb.velocity.y <= 0 && grounded == false)
+        if (Input.GetKey(KeyCode.Space) && rb.velocity.y > 0)
+        {
+            G = spaceG;
+        }
+        else if (rb.velocity.y <= 0 && grounded == false)
         {
             G = fallingG;
         }
