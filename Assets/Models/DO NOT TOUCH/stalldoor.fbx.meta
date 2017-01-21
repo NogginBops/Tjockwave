@@ -1,58 +1,25 @@
 fileFormatVersion: 2
-guid: 187a64fb7a6b8eb48b9b216c0eabdc76
-timeCreated: 1484962676
+guid: f957fc7f17f66884ba0b31c7cdb23447
+timeCreated: 1484993047
 licenseType: Free
 ModelImporter:
   serializedVersion: 19
   fileIDToRecycleName:
-    100000: //RootNode
-    100002: joint3
-    100004: mouth_move
-    100006: pCylinder29
-    100008: polySurface13
-    100010: polySurface17
-    100012: polySurface23
-    100014: root_j
-    100016: pCube56
-    100018: pCube57
-    100020: pCube58
-    100022: polySurface27
-    100024: pSphere7
-    100026: pSphere8
-    100028: transform85
-    100030: transform86
-    100032: transform87
-    100034: transform88
-    100036: transform89
-    400000: //RootNode
-    400002: joint3
-    400004: mouth_move
-    400006: pCylinder29
-    400008: polySurface13
-    400010: polySurface17
-    400012: polySurface23
-    400014: root_j
-    400016: pCube56
-    400018: pCube57
-    400020: pCube58
-    400022: polySurface27
-    400024: pSphere7
-    400026: pSphere8
-    400028: transform85
-    400030: transform86
-    400032: transform87
-    400034: transform88
-    400036: transform89
-    2300000: polySurface23
-    2300002: pCube58
-    3300000: polySurface23
-    3300002: pCube58
-    4300000: polySurface23
-    4300002: polySurface13
-    4300004: pCube58
-    7400000: Take 001
+    100000: Door_origin
+    100002: stall_04
+    100004: //RootNode
+    100006: stall_04_polySurface33
+    400000: Door_origin
+    400002: stall_04
+    400004: //RootNode
+    400006: stall_04_polySurface33
+    2300000: stall_04
+    2300002: stall_04_polySurface33
+    3300000: stall_04
+    3300002: stall_04_polySurface33
+    4300000: stall_04
+    4300002: stall_04_polySurface33
     9500000: //RootNode
-    13700000: polySurface13
   materials:
     importMaterials: 1
     materialName: 0

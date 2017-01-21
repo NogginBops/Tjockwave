@@ -21,6 +21,11 @@ ModelImporter:
     100026: pSphere3
     100028: pSphere4
     100030: root_j1
+    100032: pSphere5
+    100034: pSphere6
+    100036: pSphere9
+    100038: polySurface25
+    100040: polySurface26
     400000: //RootNode
     400002: joint4
     400004: joint5
@@ -37,16 +42,31 @@ ModelImporter:
     400026: pSphere3
     400028: pSphere4
     400030: root_j1
+    400032: pSphere5
+    400034: pSphere6
+    400036: pSphere9
+    400038: polySurface25
+    400040: polySurface26
     2300000: pCube52
     2300002: pCube53
     2300004: polySurface18
     2300006: pSphere3
     2300008: pSphere4
+    2300010: pSphere5
+    2300012: pSphere6
+    2300014: pSphere9
+    2300016: polySurface25
+    2300018: polySurface26
     3300000: pCube52
     3300002: pCube53
     3300004: polySurface18
     3300006: pSphere3
     3300008: pSphere4
+    3300010: pSphere5
+    3300012: pSphere6
+    3300014: pSphere9
+    3300016: polySurface25
+    3300018: polySurface26
     4300000: polySurface18
     4300002: polySurface21
     4300004: polySurface24
@@ -54,6 +74,11 @@ ModelImporter:
     4300008: pCube52
     4300010: pSphere4
     4300012: pCube53
+    4300014: pSphere5
+    4300016: pSphere6
+    4300018: pSphere9
+    4300020: polySurface25
+    4300022: polySurface26
     7400000: Take 001
     9500000: //RootNode
     13700000: polySurface21
