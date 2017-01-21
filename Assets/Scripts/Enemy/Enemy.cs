@@ -24,13 +24,13 @@ public class Enemy : MonoBehaviour {
 
     void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.tag != "Ground")
-        {         
-            if (rb.velocity.magnitude > deathVelocity)
+        if (collision.gameObject.tag != "Enemy")
+        {
+            if (collision.impulse.sqrMagnitude > (deathVelocity * deathVelocity))
             {
                 Die();
-            }
-        }
+            }           
+        }         
 
         if (collision.gameObject.tag == "Player")
         {

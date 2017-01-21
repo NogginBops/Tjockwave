@@ -215,11 +215,12 @@ MonoBehaviour:
   G: 16
   spaceG: 9
   fallingG: 30
-  G: 11
   slamMinJumpHeight: 2
   slamDownForce: 1000
   slamDistanceToGround: 1
   slamShockWave: {fileID: 1561116392357380, guid: 3457ba11454d261429b64d9dbf5c986a,
+    type: 2}
+  slamShockwaveParticles: {fileID: 1979396053959334, guid: ab60f6cbcfbce0b49a9db8f1d99c26bd,
     type: 2}
 --- !u!136 &136926852705379678
 CapsuleCollider:
