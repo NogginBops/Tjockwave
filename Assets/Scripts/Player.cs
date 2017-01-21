@@ -78,6 +78,9 @@ public class Player : MonoBehaviour {
             if (slamming == true)
             {
                 ShockWave shockWave = Instantiate(slamShockWave, transform.position, Quaternion.identity).GetComponent<ShockWave>();
+                shockWave.force = settings.shockForce;
+                shockWave.maxSize = settings.shockMaxSize;
+                shockWave.speed = settings.shockSpeed;
 
                 Instantiate(slamShockwaveParticles, transform.position, Quaternion.Euler(new Vector3(90, 0, 0)));
 

@@ -1822,33 +1822,53 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   arenaLayerMask: Arena
   health: 100
-  speed: 30
-  turnSpeed: 10
-  jumpForce: 6
-  G: 16
-  spaceG: 9
-  fallingG: 30
-  slamMinJumpHeight: 1.5
-  slamDownForce: 1000
-  slamDistanceToGround: 1
-  slamShockWave: {fileID: 1561116392357380, guid: 3457ba11454d261429b64d9dbf5c986a,
-    type: 2}
+  settings:
+    scale: {x: 0, y: 0, z: 0}
+    speed: 30
+    turnSpeed: 20
+    jumpForce: 6
+    G: 16
+    spaceG: 9
+    fallingG: 30
+    slamMinJumpHeight: 1.5
+    slamDownForce: 1000
+    slamDistanceToGround: 1
+    shockForce: 2000
+    shockSpeed: 30
+    shockMaxSize: 10
+  foodCounter: 0
   slamShockwaveParticles: {fileID: 1979396053959334, guid: ab60f6cbcfbce0b49a9db8f1d99c26bd,
     type: 2}
+  slamShockWave: {fileID: 1561116392357380, guid: 3457ba11454d261429b64d9dbf5c986a,
+    type: 2}
   cameraScript: {fileID: 0}
-  foodCounter: 0
-  healthMultiplier: 1.1
-  speedDivisor: 1
-  scaleMultiplier: 1.2
   foodBoostData:
-  - health: 150
+  - scale: {x: 2, y: 2, z: 2}
     speed: 25
-    scale: {x: 2, y: 2, z: 2}
+    turnSpeed: 0
+    jumpForce: 0
+    G: 0
+    spaceG: 0
+    fallingG: 0
+    slamMinJumpHeight: 0
+    slamDownForce: 0
     slamDistanceToGround: 2
-  - health: 200
+    shockForce: 0
+    shockSpeed: 0
+    shockMaxSize: 0
+  - scale: {x: 3, y: 3, z: 3}
     speed: 20
-    scale: {x: 3, y: 3, z: 3}
+    turnSpeed: 0
+    jumpForce: 0
+    G: 0
+    spaceG: 0
+    fallingG: 0
+    slamMinJumpHeight: 0
+    slamDownForce: 0
     slamDistanceToGround: 3
+    shockForce: 0
+    shockSpeed: 0
+    shockMaxSize: 0
 --- !u!136 &136926852705379678
 CapsuleCollider:
   m_ObjectHideFlags: 1
