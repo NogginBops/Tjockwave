@@ -10,17 +10,19 @@ public class Enemy : MonoBehaviour {
     public float deathVelocity;
 
     public GameObject deathParticles;
-
+    
     CameraShake camShake;
     
-	// Use this for initialization
-	void Start () {
+    public AudioClip death;
+
+    // Use this for initialization
+    void Start () {
         camShake = Camera.main.GetComponent<CameraShake>();
     }
 	
 	// Update is called once per frame
 	void Update () {
-		
+        
 	}
 
     void OnCollisionEnter(Collision collision)
@@ -56,6 +58,8 @@ public class Enemy : MonoBehaviour {
 
     void Die()
     {
+        AudioSource audioSource = new GameObject("EnemyDeath", typeof(AudioSource), typeof(DestroyOnAudioComplete)).GetComponent<AudioSource>();
+        audioSource.PlayOneShot(death, 0.4f);
         health = 0;
         transform.parent.GetComponent<Flock>().RemoveBoid(GetComponent<Rigidbody>());
         Destroy(gameObject);
