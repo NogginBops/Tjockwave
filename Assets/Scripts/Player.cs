@@ -48,6 +48,17 @@ public class Player : MonoBehaviour {
 
     }
     
+    void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            if (grounded)
+            {
+                rb.AddForce(Vector3.up * settings.jumpForce, ForceMode.Impulse);
+            }
+        }
+    }
+
 	// Update is called once per frame
 	void FixedUpdate () {
 
@@ -141,13 +152,7 @@ public class Player : MonoBehaviour {
         }
 
         // -- JUMP --
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            if (grounded)
-            {
-                rb.AddForce(Vector3.up * settings.jumpForce, ForceMode.Impulse);
-            }
-        }
+        
 
         if (Input.GetMouseButtonDown(1))
         {
