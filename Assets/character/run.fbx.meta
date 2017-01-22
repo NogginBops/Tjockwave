@@ -1,0 +1,327 @@
+fileFormatVersion: 2
+guid: c1f0dc7faf5db4811b7e94a41931ed8b
+timeCreated: 1485035923
+licenseType: Free
+ModelImporter:
+  serializedVersion: 19
+  fileIDToRecycleName:
+    100000: face
+    100002: head
+    100004: joint62
+    100006: l_ankle
+    100008: l_arm1
+    100010: l_arm2
+    100012: l_arm3
+    100014: l_eye
+    100016: l_eyelid
+    100018: l_fingers_1
+    100020: l_fingers_2
+    100022: l_fingers_3
+    100024: l_foot_1
+    100026: l_foot_2
+    100028: l_foot_3
+    100030: l_foot_4
+    100032: l_hnd
+    100034: l_index_1
+    100036: l_index_2
+    100038: l_index_3
+    100040: l_knee
+    100042: l_leg
+    100044: l_tumb_1
+    100046: l_tumb_2
+    100048: main
+    100050: main_character1
+    100052: mouth
+    100054: neck
+    100056: r_ankle
+    100058: r_arm_1
+    100060: r_arm_2
+    100062: r_arm_3
+    100064: r_eye
+    100066: r_eyelid
+    100068: r_fingers_1
+    100070: r_fingers_2
+    100072: r_fingers_3
+    100074: r_foot1
+    100076: r_foot_2
+    100078: r_foot_3
+    100080: r_foot_4
+    100082: r_hand
+    100084: r_index_1
+    100086: r_index_2
+    100088: r_index_3
+    100090: r_knee
+    100092: r_leg
+    100094: r_tumb_1
+    100096: r_tumb_2
+    100098: //RootNode
+    100100: shoulders
+    100102: spine_1
+    100104: spine_2
+    100106: spine_3
+    100108: stomach
+    400000: face
+    400002: head
+    400004: joint62
+    400006: l_ankle
+    400008: l_arm1
+    400010: l_arm2
+    400012: l_arm3
+    400014: l_eye
+    400016: l_eyelid
+    400018: l_fingers_1
+    400020: l_fingers_2
+    400022: l_fingers_3
+    400024: l_foot_1
+    400026: l_foot_2
+    400028: l_foot_3
+    400030: l_foot_4
+    400032: l_hnd
+    400034: l_index_1
+    400036: l_index_2
+    400038: l_index_3
+    400040: l_knee
+    400042: l_leg
+    400044: l_tumb_1
+    400046: l_tumb_2
+    400048: main
+    400050: main_character1
+    400052: mouth
+    400054: neck
+    400056: r_ankle
+    400058: r_arm_1
+    400060: r_arm_2
+    400062: r_arm_3
+    400064: r_eye
+    400066: r_eyelid
+    400068: r_fingers_1
+    400070: r_fingers_2
+    400072: r_fingers_3
+    400074: r_foot1
+    400076: r_foot_2
+    400078: r_foot_3
+    400080: r_foot_4
+    400082: r_hand
+    400084: r_index_1
+    400086: r_index_2
+    400088: r_index_3
+    400090: r_knee
+    400092: r_leg
+    400094: r_tumb_1
+    400096: r_tumb_2
+    400098: //RootNode
+    400100: shoulders
+    400102: spine_1
+    400104: spine_2
+    400106: spine_3
+    400108: stomach
+    4300000: main_character1
+    7400000: run_anim
+    9500000: //RootNode
+    13700000: main_character1
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: run_anim
+      takeName: Take 001
+      firstFrame: 1
+      lastFrame: 30
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: main
+        weight: 1
+      - path: main/l_leg
+        weight: 1
+      - path: main/l_leg/l_knee
+        weight: 1
+      - path: main/l_leg/l_knee/l_ankle
+        weight: 1
+      - path: main/l_leg/l_knee/l_ankle/l_foot_1
+        weight: 1
+      - path: main/l_leg/l_knee/l_ankle/l_foot_1/l_foot_2
+        weight: 1
+      - path: main/l_leg/l_knee/l_ankle/l_foot_1/l_foot_2/l_foot_3
+        weight: 1
+      - path: main/l_leg/l_knee/l_ankle/l_foot_1/l_foot_2/l_foot_3/l_foot_4
+        weight: 1
+      - path: main/r_leg
+        weight: 1
+      - path: main/r_leg/r_knee
+        weight: 1
+      - path: main/r_leg/r_knee/r_ankle
+        weight: 1
+      - path: main/r_leg/r_knee/r_ankle/r_foot1
+        weight: 1
+      - path: main/r_leg/r_knee/r_ankle/r_foot1/r_foot_2
+        weight: 1
+      - path: main/r_leg/r_knee/r_ankle/r_foot1/r_foot_2/r_foot_3
+        weight: 1
+      - path: main/r_leg/r_knee/r_ankle/r_foot1/r_foot_2/r_foot_3/r_foot_4
+        weight: 1
+      - path: main/spine_1
+        weight: 1
+      - path: main/spine_1/spine_2
+        weight: 1
+      - path: main/spine_1/spine_2/spine_3
+        weight: 1
+      - path: main/spine_1/spine_2/spine_3/shoulders
+        weight: 1
+      - path: main/spine_1/spine_2/spine_3/shoulders/l_arm1
+        weight: 1
+      - path: main/spine_1/spine_2/spine_3/shoulders/l_arm1/l_arm2
+        weight: 1
+      - path: main/spine_1/spine_2/spine_3/shoulders/l_arm1/l_arm2/l_arm3
+        weight: 1
+      - path: main/spine_1/spine_2/spine_3/shoulders/l_arm1/l_arm2/l_arm3/l_hnd
+        weight: 1
+      - path: main/spine_1/spine_2/spine_3/shoulders/l_arm1/l_arm2/l_arm3/l_hnd/l_fingers_1
+        weight: 1
+      - path: main/spine_1/spine_2/spine_3/shoulders/l_arm1/l_arm2/l_arm3/l_hnd/l_fingers_1/l_fingers_2
+        weight: 1
+      - path: main/spine_1/spine_2/spine_3/shoulders/l_arm1/l_arm2/l_arm3/l_hnd/l_fingers_1/l_fingers_2/l_fingers_3
+        weight: 1
+      - path: main/spine_1/spine_2/spine_3/shoulders/l_arm1/l_arm2/l_arm3/l_hnd/l_index_1
+        weight: 1
+      - path: main/spine_1/spine_2/spine_3/shoulders/l_arm1/l_arm2/l_arm3/l_hnd/l_index_1/l_index_2
+        weight: 1
+      - path: main/spine_1/spine_2/spine_3/shoulders/l_arm1/l_arm2/l_arm3/l_hnd/l_index_1/l_index_2/l_index_3
+        weight: 1
+      - path: main/spine_1/spine_2/spine_3/shoulders/l_arm1/l_arm2/l_arm3/l_hnd/l_tumb_1
+        weight: 1
+      - path: main/spine_1/spine_2/spine_3/shoulders/l_arm1/l_arm2/l_arm3/l_hnd/l_tumb_1/l_tumb_2
+        weight: 1
+      - path: main/spine_1/spine_2/spine_3/shoulders/neck
+        weight: 1
+      - path: main/spine_1/spine_2/spine_3/shoulders/neck/head
+        weight: 1
+      - path: main/spine_1/spine_2/spine_3/shoulders/neck/head/face
+        weight: 1
+      - path: main/spine_1/spine_2/spine_3/shoulders/neck/head/face/l_eye
+        weight: 1
+      - path: main/spine_1/spine_2/spine_3/shoulders/neck/head/face/l_eyelid
+        weight: 1
+      - path: main/spine_1/spine_2/spine_3/shoulders/neck/head/face/mouth
+        weight: 1
+      - path: main/spine_1/spine_2/spine_3/shoulders/neck/head/joint62
+        weight: 1
+      - path: main/spine_1/spine_2/spine_3/shoulders/neck/head/joint62/r_eye
+        weight: 1
+      - path: main/spine_1/spine_2/spine_3/shoulders/neck/head/joint62/r_eyelid
+        weight: 1
+      - path: main/spine_1/spine_2/spine_3/shoulders/r_arm_1
+        weight: 1
+      - path: main/spine_1/spine_2/spine_3/shoulders/r_arm_1/r_arm_2
+        weight: 1
+      - path: main/spine_1/spine_2/spine_3/shoulders/r_arm_1/r_arm_2/r_arm_3
+        weight: 1
+      - path: main/spine_1/spine_2/spine_3/shoulders/r_arm_1/r_arm_2/r_arm_3/r_hand
+        weight: 1
+      - path: main/spine_1/spine_2/spine_3/shoulders/r_arm_1/r_arm_2/r_arm_3/r_hand/r_fingers_1
+        weight: 1
+      - path: main/spine_1/spine_2/spine_3/shoulders/r_arm_1/r_arm_2/r_arm_3/r_hand/r_fingers_1/r_fingers_2
+        weight: 1
+      - path: main/spine_1/spine_2/spine_3/shoulders/r_arm_1/r_arm_2/r_arm_3/r_hand/r_fingers_1/r_fingers_2/r_fingers_3
+        weight: 1
+      - path: main/spine_1/spine_2/spine_3/shoulders/r_arm_1/r_arm_2/r_arm_3/r_hand/r_index_1
+        weight: 1
+      - path: main/spine_1/spine_2/spine_3/shoulders/r_arm_1/r_arm_2/r_arm_3/r_hand/r_index_1/r_index_2
+        weight: 1
+      - path: main/spine_1/spine_2/spine_3/shoulders/r_arm_1/r_arm_2/r_arm_3/r_hand/r_index_1/r_index_2/r_index_3
+        weight: 1
+      - path: main/spine_1/spine_2/spine_3/shoulders/r_arm_1/r_arm_2/r_arm_3/r_hand/r_tumb_1
+        weight: 1
+      - path: main/spine_1/spine_2/spine_3/shoulders/r_arm_1/r_arm_2/r_arm_3/r_hand/r_tumb_1/r_tumb_2
+        weight: 1
+      - path: main/spine_1/stomach
+        weight: 1
+      - path: main_character1
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 0
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
