@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class MainMenuController : MonoBehaviour {
 
@@ -12,6 +13,11 @@ public class MainMenuController : MonoBehaviour {
     public Vector2 timeInterval;
     public bool randomColor;
 
+    public Image credits;
+    public float creditsFromScale;
+    public float creditsToScale;
+    public float creditsScaleSpeed;
+
     float randomInterval;
     float timer;
 
@@ -22,11 +28,21 @@ public class MainMenuController : MonoBehaviour {
 
         monsterMarchers = new List<GameObject>();
         randomInterval = Random.Range(timeInterval.x, timeInterval.y);
+        credits.gameObject.SetActive(false);
     }
 	
 	// Update is called once per frame
 	void Update () {
         timer += Time.deltaTime;
+
+        if (credits.IsActive())
+        {          
+            credits.rectTransform.localScale = Vector3.Lerp(credits.rectTransform.localScale, Vector3.one * creditsToScale, creditsScaleSpeed);
+        }
+        else
+        {
+            credits.rectTransform.localScale = Vector3.one * creditsFromScale;
+        }
 
         if (timer > randomInterval)
         {
@@ -54,5 +70,15 @@ public class MainMenuController : MonoBehaviour {
             }
         }
 
-	}
+    }
+
+    public void OnPlay()
+    {
+        UnityEngine.SceneManagement.SceneManager.LoadScene(0);
+    }
+
+    public void OnCredtis()
+    {
+        credits.gameObject.SetActive(!credits.IsActive());
+    }
 }

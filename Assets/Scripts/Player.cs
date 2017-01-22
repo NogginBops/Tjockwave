@@ -218,6 +218,15 @@ public class Player : MonoBehaviour {
 
     public void Die()
     {
+        GameObject.FindGameObjectWithTag("UI").GetComponent<UIController>().GameOverUI();
+
+        rb.useGravity = false;
+        rb.isKinematic = true;
+        for (int i = 0; i < transform.childCount; i++)
+        {
+            transform.GetChild(i).gameObject.SetActive(false);
+        }
+
         Debug.Log("WASTED!");
     }
 
