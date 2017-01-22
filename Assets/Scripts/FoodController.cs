@@ -35,7 +35,7 @@ public class FoodController : MonoBehaviour {
     }
 	
 	// Update is called once per frame
-	void Update () {
+	void FixedUpdate () {
         if (currentFood.Count < maxFood)
         {
             timer += Time.deltaTime;
@@ -53,7 +53,8 @@ public class FoodController : MonoBehaviour {
 
                 Vector3 dir = (targetPos - stallPos).normalized;
 
-                currentFood.Add(Instantiate(foodPrefab, stallPos, Quaternion.identity, transform).GetComponent<Food>());
+                Quaternion randomRot = new Quaternion(Random.Range(0f, 360f), Random.Range(0f, 360f), Random.Range(0f, 360f), Random.Range(0f, 360f));
+                currentFood.Add(Instantiate(foodPrefab, stallPos, randomRot, transform).GetComponent<Food>());
                 currentFood[currentFood.Count - 1].GetComponent<Rigidbody>().AddForce(dir * throwDirForce + Vector3.up * throwUpForce);
                 randomDelay = Random.Range(minDelay, maxDelay);
                 timer = 0;

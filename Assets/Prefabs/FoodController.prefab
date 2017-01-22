@@ -66,9 +66,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   foodPrefab: {fileID: 1719042222996184, guid: 77dbfa540eca56148b09e9abe7d4c63d, type: 2}
   maxFood: 3
-  stallSpawnHeight: 7
+  stallSpawnHeight: 10
   spawnHeight: 1
   minDelay: 2
   maxDelay: 10
-  throwDirForce: 100
-  throwUpForce: 50
+  throwDirForce: 400
+  throwUpForce: 300
