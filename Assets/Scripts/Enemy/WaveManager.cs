@@ -27,6 +27,8 @@ public class WaveManager : MonoBehaviour {
 
     public float enemySpawnDelay;
 
+    public float initialDelay;
+
     public Vector3 spawnOffset;
 
     public Transform player;
@@ -47,7 +49,7 @@ public class WaveManager : MonoBehaviour {
 	void Start () {
         StartCoroutine(SpawnEnemies());
 
-        LoadWave(currWave);
+        StartCoroutine(LoadWaveDelayed(initialDelay));
     }
 	
 	// Update is called once per frame
