@@ -8,6 +8,7 @@ TagManager:
   - Ground
   - Shockwave
   - Stall
+  - UI
   layers:
   - Default
   - TransparentFX

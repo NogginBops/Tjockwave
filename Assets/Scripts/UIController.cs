@@ -22,6 +22,17 @@ public class UIController : MonoBehaviour {
     public Text slimesKilled;
 
     public Text grubText;
+
+    // --Game over screen--
+
+    bool youDied;
+    public Text youDiedText;
+    public float youDiedFromScale;
+    public float youDiedToScale;
+    public float youDiedScaleSpeed;
+
+    public GameObject retry;
+    public GameObject returnToMenu;
     
     void Awake()
     {
@@ -33,6 +44,18 @@ public class UIController : MonoBehaviour {
         currentWave.text = "0";
         slimesKilled.text = "0";
         grubText.text = "0";
+        youDied = false;
+        youDiedText.enabled = false;
+        retry.SetActive(false);
+        returnToMenu.SetActive(false);
+    }
+
+    void Update ()
+    {
+        if (youDied)
+        {
+            youDiedText.rectTransform.localScale = Vector3.Lerp(youDiedText.rectTransform.localScale, Vector3.one * youDiedToScale, youDiedScaleSpeed);
+        }
     }
 
     public void SetPlayerHealth(float fraction)
@@ -80,5 +103,24 @@ public class UIController : MonoBehaviour {
     public void SetFoodPercentage(int percentage)
     {
         grubText.text = "" + percentage;
+    }
+
+    public void GameOverUI()
+    {
+        youDiedText.enabled = true;
+        youDiedText.rectTransform.localScale = Vector3.one * youDiedFromScale;
+        youDied = true;
+        retry.SetActive(true);
+        returnToMenu.SetActive(true);
+    }
+
+    public void OnRetry()
+    {
+        UnityEngine.SceneManagement.SceneManager.LoadScene(0);
+    }
+
+    public void OnReturnToMenu()
+    {
+        UnityEngine.SceneManagement.SceneManager.LoadScene(1);
     }
 }
