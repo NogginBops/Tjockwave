@@ -920,7 +920,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1863824159110648}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 1.5, z: 0}
+  m_LocalPosition: {x: 3.5448332, y: 2.09, z: 11.54294}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4405100872667970}
@@ -1717,18 +1717,18 @@ MonoBehaviour:
     scale: {x: 1, y: 1, z: 1}
     speed: 35
     turnSpeed: 30
-    jumpForce: 7
+    jumpForce: 4
     spaceDuration: 1
     G: 0
     spaceG: -2
-    fallingG: 6
+    fallingG: 25
     slamMinJumpHeight: 1.5
     slamDownForce: 1000
     slamDistanceToGround: 1
     shockForce: 2000
     shockSpeed: 30
     shockMaxSize: 10
-  foodCounter: 1
+  foodCounter: 0
   slamShockwaveParticles: {fileID: 1979396053959334, guid: ab60f6cbcfbce0b49a9db8f1d99c26bd,
     type: 2}
   slamShockWave: {fileID: 1561116392357380, guid: 3457ba11454d261429b64d9dbf5c986a,
@@ -1736,21 +1736,21 @@ MonoBehaviour:
   cameraScript: {fileID: 0}
   foodBoostData:
   - scale: {x: 2, y: 2, z: 2}
-    speed: 30
+    speed: 28
     turnSpeed: 30
-    jumpForce: 7
-    spaceDuration: 0
-    G: 16
-    spaceG: 9
-    fallingG: 30
+    jumpForce: 8
+    spaceDuration: 1
+    G: 12
+    spaceG: 28
+    fallingG: 45
     slamMinJumpHeight: 1.5
     slamDownForce: 1000
     slamDistanceToGround: 2
-    shockForce: 2000
-    shockSpeed: 30
-    shockMaxSize: 10
+    shockForce: 10
+    shockSpeed: 6
+    shockMaxSize: 6
   - scale: {x: 3, y: 3, z: 3}
-    speed: 25
+    speed: 22
     turnSpeed: 25
     jumpForce: 7
     spaceDuration: 0
@@ -1760,8 +1760,8 @@ MonoBehaviour:
     slamMinJumpHeight: 1.5
     slamDownForce: 1000
     slamDistanceToGround: 3
-    shockForce: 2000
-    shockSpeed: 30
+    shockForce: 15
+    shockSpeed: 8
     shockMaxSize: 10
   - scale: {x: 3, y: 3, z: 3}
     speed: 20
@@ -1774,11 +1774,11 @@ MonoBehaviour:
     slamMinJumpHeight: 1.5
     slamDownForce: 1000
     slamDistanceToGround: 3
-    shockForce: 2000
-    shockSpeed: 30
-    shockMaxSize: 10
+    shockForce: 40
+    shockSpeed: 10
+    shockMaxSize: 17
   - scale: {x: 3, y: 3, z: 3}
-    speed: 15
+    speed: 13
     turnSpeed: 15
     jumpForce: 7
     spaceDuration: 0
@@ -1788,11 +1788,11 @@ MonoBehaviour:
     slamMinJumpHeight: 1.5
     slamDownForce: 1000
     slamDistanceToGround: 3
-    shockForce: 2000
-    shockSpeed: 30
-    shockMaxSize: 10
+    shockForce: 500
+    shockSpeed: 13
+    shockMaxSize: 20
   - scale: {x: 3, y: 3, z: 3}
-    speed: 10
+    speed: 8
     turnSpeed: 10
     jumpForce: 7
     spaceDuration: 0
@@ -1803,8 +1803,8 @@ MonoBehaviour:
     slamDownForce: 1000
     slamDistanceToGround: 3
     shockForce: 2000
-    shockSpeed: 30
-    shockMaxSize: 10
+    shockSpeed: 20
+    shockMaxSize: 30
 --- !u!136 &136926852705379678
 CapsuleCollider:
   m_ObjectHideFlags: 1

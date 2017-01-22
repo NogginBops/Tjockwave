@@ -52,6 +52,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemySpawnDelay: 0.01
+  initialDelay: 5
   spawnOffset: {x: 0, y: 1, z: 0}
   player: {fileID: 0}
   flockSettigns:
@@ -59,24 +60,111 @@ MonoBehaviour:
     separationAmp: 0
     alignmentAmp: 0
     cohesionAmp: 0
-    followPlayerAmp: 1
+    followPlayerAmp: 8
+    maxSpeed: 8
   Waves:
-  - enemyCount: 50
-    waveDuration: 500
+  - enemyCount: 10
+    waveDuration: 5
+    enemyPrefab: {fileID: 1904599184031766, guid: 16868e291f230014a8b0720380457b6d,
+      type: 2}
+    flock: {fileID: 0}
+  - enemyCount: 10
+    waveDuration: 30
     enemyPrefab: {fileID: 1904599184031766, guid: 16868e291f230014a8b0720380457b6d,
       type: 2}
     flock: {fileID: 0}
   - enemyCount: 30
+    waveDuration: 30
+    enemyPrefab: {fileID: 1904599184031766, guid: 16868e291f230014a8b0720380457b6d,
+      type: 2}
+    flock: {fileID: 0}
+  - enemyCount: 50
+    waveDuration: 30
+    enemyPrefab: {fileID: 1904599184031766, guid: 16868e291f230014a8b0720380457b6d,
+      type: 2}
+    flock: {fileID: 0}
+  - enemyCount: 75
+    waveDuration: 30
+    enemyPrefab: {fileID: 1904599184031766, guid: 16868e291f230014a8b0720380457b6d,
+      type: 2}
+    flock: {fileID: 0}
+  - enemyCount: 50
+    waveDuration: 10
+    enemyPrefab: {fileID: 1904599184031766, guid: 16868e291f230014a8b0720380457b6d,
+      type: 2}
+    flock: {fileID: 0}
+  - enemyCount: 15
+    waveDuration: 10
+    enemyPrefab: {fileID: 1904599184031766, guid: 16868e291f230014a8b0720380457b6d,
+      type: 2}
+    flock: {fileID: 0}
+  - enemyCount: 15
     waveDuration: 20
     enemyPrefab: {fileID: 1904599184031766, guid: 16868e291f230014a8b0720380457b6d,
       type: 2}
     flock: {fileID: 0}
+  - enemyCount: 80
+    waveDuration: 30
+    enemyPrefab: {fileID: 1904599184031766, guid: 16868e291f230014a8b0720380457b6d,
+      type: 2}
+    flock: {fileID: 0}
+  - enemyCount: 30
+    waveDuration: 30
+    enemyPrefab: {fileID: 1904599184031766, guid: 16868e291f230014a8b0720380457b6d,
+      type: 2}
+    flock: {fileID: 0}
   - enemyCount: 100
-    waveDuration: 100
+    waveDuration: 30
+    enemyPrefab: {fileID: 1904599184031766, guid: 16868e291f230014a8b0720380457b6d,
+      type: 2}
+    flock: {fileID: 0}
+  - enemyCount: 30
+    waveDuration: 3
+    enemyPrefab: {fileID: 1904599184031766, guid: 16868e291f230014a8b0720380457b6d,
+      type: 2}
+    flock: {fileID: 0}
+  - enemyCount: 30
+    waveDuration: 3
+    enemyPrefab: {fileID: 1904599184031766, guid: 16868e291f230014a8b0720380457b6d,
+      type: 2}
+    flock: {fileID: 0}
+  - enemyCount: 30
+    waveDuration: 13
+    enemyPrefab: {fileID: 1904599184031766, guid: 16868e291f230014a8b0720380457b6d,
+      type: 2}
+    flock: {fileID: 0}
+  - enemyCount: 50
+    waveDuration: 60
+    enemyPrefab: {fileID: 1904599184031766, guid: 16868e291f230014a8b0720380457b6d,
+      type: 2}
+    flock: {fileID: 0}
+  - enemyCount: 100
+    waveDuration: 120
+    enemyPrefab: {fileID: 1904599184031766, guid: 16868e291f230014a8b0720380457b6d,
+      type: 2}
+    flock: {fileID: 0}
+  - enemyCount: 200
+    waveDuration: 240
+    enemyPrefab: {fileID: 1904599184031766, guid: 16868e291f230014a8b0720380457b6d,
+      type: 2}
+    flock: {fileID: 0}
+  - enemyCount: 150
+    waveDuration: 120
+    enemyPrefab: {fileID: 1904599184031766, guid: 16868e291f230014a8b0720380457b6d,
+      type: 2}
+    flock: {fileID: 0}
+  - enemyCount: 50
+    waveDuration: 240
+    enemyPrefab: {fileID: 1904599184031766, guid: 16868e291f230014a8b0720380457b6d,
+      type: 2}
+    flock: {fileID: 0}
+  - enemyCount: 350
+    waveDuration: 600
     enemyPrefab: {fileID: 1904599184031766, guid: 16868e291f230014a8b0720380457b6d,
       type: 2}
     flock: {fileID: 0}
   SpawnAreas:
+  - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
   currWave: 0

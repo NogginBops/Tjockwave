@@ -48,19 +48,29 @@ public class Player : MonoBehaviour {
 
     }
     
-	// Update is called once per frame
-	void FixedUpdate () {
-
+    void Update()
+    {
         // Space Timer
         if (Input.GetKeyUp(KeyCode.Space))
         {
             spaceTimer = 0;
         }
 
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            if (grounded)
+            {
+                rb.AddForce(Vector3.up * settings.jumpForce, ForceMode.Impulse);
+            }
+        }
+    }
+
+	// Update is called once per frame
+	void FixedUpdate () {
         // Gravity
         if (Input.GetKey(KeyCode.Space) && rb.velocity.y > 0 && spaceTimer < settings.spaceDuration)
         {
-            spaceTimer += Time.deltaTime;
+            spaceTimer += Time.fixedDeltaTime;
             settings.G = settings.spaceG;
         }
         else if (rb.velocity.y <= 0 && grounded == false)
@@ -132,8 +142,8 @@ public class Player : MonoBehaviour {
 
             rb.velocity = new Vector3(vel2d.x, rb.velocity.y, vel2d.y);
 
-            Quaternion rotation = Quaternion.LookRotation(dir);
-            transform.rotation = Quaternion.Slerp(transform.rotation, rotation, Time.deltaTime * settings.turnSpeed);
+            Quaternion rotation = Quaternion.LookRotation(dir);         
+            transform.rotation = Quaternion.Slerp(transform.rotation, rotation, Time.fixedDeltaTime * settings.turnSpeed);
         }
         else
         {
@@ -141,13 +151,7 @@ public class Player : MonoBehaviour {
         }
 
         // -- JUMP --
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            if (grounded)
-            {
-                rb.AddForce(Vector3.up * settings.jumpForce, ForceMode.Impulse);
-            }
-        }
+        
 
         if (Input.GetMouseButtonDown(1))
         {

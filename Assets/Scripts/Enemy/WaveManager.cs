@@ -43,7 +43,7 @@ public class WaveManager : MonoBehaviour {
 
     float timer;
 
-    public int currWave = 0;
+    public int currWave = -1;
     
 	// Use this for initialization
 	void Start () {
@@ -54,8 +54,8 @@ public class WaveManager : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-
-        if (currWave + 1 >= Waves.Count)
+        
+        if (currWave == -1 || currWave + 1 >= Waves.Count)
         {
             return;
         }
@@ -70,7 +70,7 @@ public class WaveManager : MonoBehaviour {
 
             LoadWave(currWave);
         }
-        else if (Waves[currWave].flock.IsEmpty() && spawning == false)
+        else if (Waves[currWave].flock != null && Waves[currWave].flock.IsEmpty() && spawning == false)
         {
             StartCoroutine(LoadWaveDelayed(2));
         }

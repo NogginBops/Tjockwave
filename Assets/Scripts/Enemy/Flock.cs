@@ -73,7 +73,6 @@ public class Flock : MonoBehaviour {
             Debug.DrawRay(boid.position, alignment * settings.alignmentAmp, Color.green);
             Debug.DrawRay(boid.position, cohesion * settings.cohesionAmp, Color.blue);
             Debug.DrawRay(boid.position, followPlayer * settings.followPlayerAmp, Color.cyan);
-
             
             if (separation.sqrMagnitude > Mathf.Epsilon)
                 boid.AddForce(separation * settings.separationAmp);
