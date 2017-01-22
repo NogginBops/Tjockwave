@@ -1740,9 +1740,9 @@ MonoBehaviour:
     turnSpeed: 30
     jumpForce: 8
     spaceDuration: 1
-    G: 12
-    spaceG: 28
-    fallingG: 45
+    G: 0
+    spaceG: -2
+    fallingG: 25
     slamMinJumpHeight: 1.5
     slamDownForce: 1000
     slamDistanceToGround: 2
@@ -1754,9 +1754,9 @@ MonoBehaviour:
     turnSpeed: 25
     jumpForce: 7
     spaceDuration: 0
-    G: 16
-    spaceG: 9
-    fallingG: 30
+    G: 0
+    spaceG: -2
+    fallingG: 25
     slamMinJumpHeight: 1.5
     slamDownForce: 1000
     slamDistanceToGround: 3
@@ -1768,9 +1768,9 @@ MonoBehaviour:
     turnSpeed: 20
     jumpForce: 7
     spaceDuration: 0
-    G: 16
-    spaceG: 9
-    fallingG: 30
+    G: 0
+    spaceG: -2
+    fallingG: 25
     slamMinJumpHeight: 1.5
     slamDownForce: 1000
     slamDistanceToGround: 3
@@ -1782,9 +1782,9 @@ MonoBehaviour:
     turnSpeed: 15
     jumpForce: 7
     spaceDuration: 0
-    G: 16
-    spaceG: 9
-    fallingG: 30
+    G: 0
+    spaceG: -2
+    fallingG: 25
     slamMinJumpHeight: 1.5
     slamDownForce: 1000
     slamDistanceToGround: 3
@@ -1796,9 +1796,9 @@ MonoBehaviour:
     turnSpeed: 10
     jumpForce: 7
     spaceDuration: 0
-    G: 16
-    spaceG: 9
-    fallingG: 30
+    G: 0
+    spaceG: -2
+    fallingG: 25
     slamMinJumpHeight: 1.5
     slamDownForce: 1000
     slamDistanceToGround: 3
