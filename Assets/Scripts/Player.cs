@@ -95,9 +95,7 @@ public class Player : MonoBehaviour {
         }
 
         playerAnimation.SetBool("Grounded", grounded);
-
-        Debug.Log(currentPlayerHeight + " " + settings.slamDistanceToGround + " " + (currentPlayerHeight < settings.slamDistanceToGround));
-
+        
         playerAnimation.SetBool("IsRunning", rb.velocity.magnitude > 0.001f);
         
     }
