@@ -37,8 +37,10 @@ public class Player : MonoBehaviour {
 
     float spaceTimer;
 
-	// Use this for initialization
-	void Start () {
+    float currentPlayerHeight = 0;
+
+    // Use this for initialization
+    void Start () {
         rb = GetComponent<Rigidbody>();
 
         baseSettings = settings;
@@ -61,6 +63,29 @@ public class Player : MonoBehaviour {
             if (grounded)
             {
                 rb.AddForce(Vector3.up * settings.jumpForce, ForceMode.Impulse);
+            }
+        }
+
+        if (Input.GetMouseButtonDown(1))
+        {
+            if (slamming == false && foodCounter > 0)
+            {
+                // If the player is high up enough in the air...
+                if (currentPlayerHeight > settings.slamMinJumpHeight)
+                {
+                    // ... Slam down.
+                    Debug.Log("SLAM!");
+                    rb.AddForce(Vector3.down * settings.slamDownForce);
+
+                    // Changes the physics layer of the player and its children.
+                    gameObject.layer = LayerMask.NameToLayer("PlayerSlam");
+                    for (int i = 0; i < transform.childCount; i++)
+                    {
+                        transform.GetChild(i).gameObject.layer = LayerMask.NameToLayer("PlayerSlam");
+                    }
+
+                    slamming = true;
+                }
             }
         }
     }
@@ -86,7 +111,6 @@ public class Player : MonoBehaviour {
 
         // Measures the height the player is off the ground.
         Ray ray = new Ray(transform.position, Vector3.down);
-        float currentPlayerHeight = 0;
 
         raycastPlane.Raycast(ray, out currentPlayerHeight);
 
@@ -148,32 +172,6 @@ public class Player : MonoBehaviour {
         else
         {
             targetPosition = transform.position;
-        }
-
-        // -- JUMP --
-        
-
-        if (Input.GetMouseButtonDown(1))
-        {
-            if (slamming == false && foodCounter > 0)
-            {             
-                // If the player is high up enough in the air...
-                if (currentPlayerHeight > settings.slamMinJumpHeight)
-                {
-                    // ... Slam down.
-                    Debug.Log("SLAM!");
-                    rb.AddForce(Vector3.down * settings.slamDownForce);
-
-                    // Changes the physics layer of the player and its children.
-                    gameObject.layer = LayerMask.NameToLayer("PlayerSlam");
-                    for (int i = 0; i < transform.childCount; i++)
-                    {
-                        transform.GetChild(i).gameObject.layer = LayerMask.NameToLayer("PlayerSlam");
-                    }
-
-                    slamming = true;
-                }
-            }
         }
     }
 
