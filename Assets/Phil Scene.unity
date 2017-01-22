@@ -72334,8 +72334,6 @@ Transform:
   m_Father: {fileID: 2004139710}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-<<<<<<< HEAD
-=======
 --- !u!1 &1405110865 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 1863824159110648, guid: d412c9757f38ef54eab5ae542b1e689d,
@@ -72422,7 +72420,6 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 0
->>>>>>> 51587a927e59dfc68f78d2e191164e0edcdcc8e0
 --- !u!1 &1405901428
 GameObject:
   m_ObjectHideFlags: 0
