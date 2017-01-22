@@ -49,6 +49,8 @@ public class Player : MonoBehaviour {
 
     float currentPlayerHeight = 0;
 
+    bool dead;
+
     // Use this for initialization
     void Start () {
         rb = GetComponent<Rigidbody>();
@@ -204,7 +206,7 @@ public class Player : MonoBehaviour {
         {
             health -= damage;
         }
-        else
+        else if (dead == false)
         {
             health = 0;
             Die();
@@ -220,14 +222,10 @@ public class Player : MonoBehaviour {
     {
         GameObject.FindGameObjectWithTag("UI").GetComponent<UIController>().GameOverUI();
 
-        rb.useGravity = false;
         rb.isKinematic = true;
-        for (int i = 0; i < transform.childCount; i++)
-        {
-            transform.GetChild(i).gameObject.SetActive(false);
-        }
 
         Debug.Log("WASTED!");
+        dead = true;
     }
 
     public void Eat()

@@ -24,7 +24,7 @@ public class UIController : MonoBehaviour {
 
     public Text grubText;
 
-    // --Game over screen--
+    [Header("Game Over Screen")]
 
     bool youDied;
     public Text youDiedText;
@@ -122,11 +122,11 @@ public class UIController : MonoBehaviour {
 
     public void OnRetry()
     {
-        UnityEngine.SceneManagement.SceneManager.LoadScene(0);
+        UnityEngine.SceneManagement.SceneManager.LoadScene(1);
     }
 
     public void OnReturnToMenu()
     {
-        UnityEngine.SceneManagement.SceneManager.LoadScene(1);
+        UnityEngine.SceneManagement.SceneManager.LoadScene(0);
     }
 }
