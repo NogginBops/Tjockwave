@@ -78,7 +78,7 @@ public class WaveManager : MonoBehaviour {
 
     bool spawning;
     
-    IEnumerator LoadWaveDelayed(int seconds)
+    IEnumerator LoadWaveDelayed(float seconds)
     {
         spawning = true;
 
