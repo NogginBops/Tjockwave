@@ -25,7 +25,41 @@ public class Flock : MonoBehaviour {
     public FlockSettings settings;
 
     Collider[] neighbours = new Collider[20];
-	
+
+    AudioSource audioSource;
+
+    public AudioClip growl1;
+    public AudioClip growl2;
+
+    public float soundDelay;
+
+    float soundTimer;
+
+    void Start()
+    {
+        audioSource = GetComponent<AudioSource>();
+    }
+
+    void Update()
+    {
+        if (IsEmpty() == false)
+        {
+            soundTimer -= Time.deltaTime;
+
+            if (soundTimer <= 0)
+            {
+                if (Random.Range(0, 1) == 0)
+                {
+                    audioSource.PlayOneShot(growl1, 0.1f);
+                }
+                else
+                {
+                    audioSource.PlayOneShot(growl2, 0.1f);
+                }
+            }
+        }
+    }
+
     void FixedUpdate()
     {
         foreach (var boid in boids)

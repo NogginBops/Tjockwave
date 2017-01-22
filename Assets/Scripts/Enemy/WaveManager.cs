@@ -39,6 +39,9 @@ public class WaveManager : MonoBehaviour {
 
     public List<BoxCollider> SpawnAreas;
 
+    public AudioClip growl1;
+    public AudioClip growl2;
+
     Queue<Enemy> spawnQueue = new Queue<Enemy>();
 
     float timer;
@@ -99,7 +102,7 @@ public class WaveManager : MonoBehaviour {
 
     void LoadWave(int wave)
     {
-        GameObject flockGO = new GameObject("Flock " + wave, typeof(Flock));
+        GameObject flockGO = new GameObject("Flock " + wave, typeof(Flock), typeof(AudioSource));
 
         flockGO.transform.SetParent(this.transform);
 
@@ -108,6 +111,9 @@ public class WaveManager : MonoBehaviour {
         flock.settings = flockSettigns;
 
         flock.player = player;
+
+        flock.growl1 = growl1;
+        flock.growl2 = growl2;
 
         Waves[wave].flock = flock;
 
