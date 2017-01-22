@@ -1,0 +1,21 @@
+fileFormatVersion: 2
+guid: a75f88880817d1a48a41bb908d55a312
+timeCreated: 1485042017
+licenseType: Free
+TrueTypeFontImporter:
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: BubbleGum
+  fontNames:
+  - BubbleGum
+  fallbackFontReferences: []
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
