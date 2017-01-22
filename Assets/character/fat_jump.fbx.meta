@@ -1,0 +1,409 @@
+fileFormatVersion: 2
+guid: 31f64c94cbf804d2398deebdb3b552d8
+timeCreated: 1485082438
+licenseType: Free
+ModelImporter:
+  serializedVersion: 19
+  fileIDToRecycleName:
+    100000: face
+    100002: fat_character
+    100004: //RootNode
+    100006: head
+    100008: joint62
+    100010: l_ankle
+    100012: l_arm1
+    100014: l_arm2
+    100016: l_arm3
+    100018: l_eye
+    100020: l_eyelid
+    100022: l_foot
+    100024: l_knee
+    100026: l_leg
+    100028: main
+    100030: mouth
+    100032: neck
+    100034: r_ankle
+    100036: r_arm_1
+    100038: r_arm_2
+    100040: r_arm_3
+    100042: r_eye
+    100044: r_eyelid
+    100046: r_foot
+    100048: r_knee
+    100050: r_leg
+    100052: shoulders
+    100054: spine_1
+    100056: spine_2
+    100058: spine_3
+    100060: stomach
+    400000: face
+    400002: fat_character
+    400004: //RootNode
+    400006: head
+    400008: joint62
+    400010: l_ankle
+    400012: l_arm1
+    400014: l_arm2
+    400016: l_arm3
+    400018: l_eye
+    400020: l_eyelid
+    400022: l_foot
+    400024: l_knee
+    400026: l_leg
+    400028: main
+    400030: mouth
+    400032: neck
+    400034: r_ankle
+    400036: r_arm_1
+    400038: r_arm_2
+    400040: r_arm_3
+    400042: r_eye
+    400044: r_eyelid
+    400046: r_foot
+    400048: r_knee
+    400050: r_leg
+    400052: shoulders
+    400054: spine_1
+    400056: spine_2
+    400058: spine_3
+    400060: stomach
+    4300000: fat_character
+    7400000: jump_up
+    7400002: jump_down
+    7400004: jump_air
+    9500000: //RootNode
+    13700000: fat_character
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleRotations: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: jump_up
+      takeName: Take 001
+      firstFrame: 1
+      lastFrame: 34
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: fat_character
+        weight: 1
+      - path: main
+        weight: 1
+      - path: main/l_leg
+        weight: 1
+      - path: main/l_leg/l_knee
+        weight: 1
+      - path: main/l_leg/l_knee/l_ankle
+        weight: 1
+      - path: main/l_leg/l_knee/l_ankle/l_foot
+        weight: 1
+      - path: main/r_leg
+        weight: 1
+      - path: main/r_leg/r_knee
+        weight: 1
+      - path: main/r_leg/r_knee/r_ankle
+        weight: 1
+      - path: main/r_leg/r_knee/r_ankle/r_foot
+        weight: 1
+      - path: main/spine_1
+        weight: 1
+      - path: main/spine_1/spine_2
+        weight: 1
+      - path: main/spine_1/spine_2/spine_3
+        weight: 1
+      - path: main/spine_1/spine_2/spine_3/shoulders
+        weight: 1
+      - path: main/spine_1/spine_2/spine_3/shoulders/l_arm1
+        weight: 1
+      - path: main/spine_1/spine_2/spine_3/shoulders/l_arm1/l_arm2
+        weight: 1
+      - path: main/spine_1/spine_2/spine_3/shoulders/l_arm1/l_arm2/l_arm3
+        weight: 1
+      - path: main/spine_1/spine_2/spine_3/shoulders/neck
+        weight: 1
+      - path: main/spine_1/spine_2/spine_3/shoulders/neck/head
+        weight: 1
+      - path: main/spine_1/spine_2/spine_3/shoulders/neck/head/face
+        weight: 1
+      - path: main/spine_1/spine_2/spine_3/shoulders/neck/head/face/l_eye
+        weight: 1
+      - path: main/spine_1/spine_2/spine_3/shoulders/neck/head/face/l_eyelid
+        weight: 1
+      - path: main/spine_1/spine_2/spine_3/shoulders/neck/head/face/mouth
+        weight: 1
+      - path: main/spine_1/spine_2/spine_3/shoulders/neck/head/joint62
+        weight: 1
+      - path: main/spine_1/spine_2/spine_3/shoulders/neck/head/joint62/r_eye
+        weight: 1
+      - path: main/spine_1/spine_2/spine_3/shoulders/neck/head/joint62/r_eyelid
+        weight: 1
+      - path: main/spine_1/spine_2/spine_3/shoulders/r_arm_1
+        weight: 1
+      - path: main/spine_1/spine_2/spine_3/shoulders/r_arm_1/r_arm_2
+        weight: 1
+      - path: main/spine_1/spine_2/spine_3/shoulders/r_arm_1/r_arm_2/r_arm_3
+        weight: 1
+      - path: main/spine_1/stomach
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 1
+    - serializedVersion: 16
+      name: jump_down
+      takeName: Take 001
+      firstFrame: 12
+      lastFrame: 32
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: fat_character
+        weight: 1
+      - path: main
+        weight: 1
+      - path: main/l_leg
+        weight: 1
+      - path: main/l_leg/l_knee
+        weight: 1
+      - path: main/l_leg/l_knee/l_ankle
+        weight: 1
+      - path: main/l_leg/l_knee/l_ankle/l_foot
+        weight: 1
+      - path: main/r_leg
+        weight: 1
+      - path: main/r_leg/r_knee
+        weight: 1
+      - path: main/r_leg/r_knee/r_ankle
+        weight: 1
+      - path: main/r_leg/r_knee/r_ankle/r_foot
+        weight: 1
+      - path: main/spine_1
+        weight: 1
+      - path: main/spine_1/spine_2
+        weight: 1
+      - path: main/spine_1/spine_2/spine_3
+        weight: 1
+      - path: main/spine_1/spine_2/spine_3/shoulders
+        weight: 1
+      - path: main/spine_1/spine_2/spine_3/shoulders/l_arm1
+        weight: 1
+      - path: main/spine_1/spine_2/spine_3/shoulders/l_arm1/l_arm2
+        weight: 1
+      - path: main/spine_1/spine_2/spine_3/shoulders/l_arm1/l_arm2/l_arm3
+        weight: 1
+      - path: main/spine_1/spine_2/spine_3/shoulders/neck
+        weight: 1
+      - path: main/spine_1/spine_2/spine_3/shoulders/neck/head
+        weight: 1
+      - path: main/spine_1/spine_2/spine_3/shoulders/neck/head/face
+        weight: 1
+      - path: main/spine_1/spine_2/spine_3/shoulders/neck/head/face/l_eye
+        weight: 1
+      - path: main/spine_1/spine_2/spine_3/shoulders/neck/head/face/l_eyelid
+        weight: 1
+      - path: main/spine_1/spine_2/spine_3/shoulders/neck/head/face/mouth
+        weight: 1
+      - path: main/spine_1/spine_2/spine_3/shoulders/neck/head/joint62
+        weight: 1
+      - path: main/spine_1/spine_2/spine_3/shoulders/neck/head/joint62/r_eye
+        weight: 1
+      - path: main/spine_1/spine_2/spine_3/shoulders/neck/head/joint62/r_eyelid
+        weight: 1
+      - path: main/spine_1/spine_2/spine_3/shoulders/r_arm_1
+        weight: 1
+      - path: main/spine_1/spine_2/spine_3/shoulders/r_arm_1/r_arm_2
+        weight: 1
+      - path: main/spine_1/spine_2/spine_3/shoulders/r_arm_1/r_arm_2/r_arm_3
+        weight: 1
+      - path: main/spine_1/stomach
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 1
+    - serializedVersion: 16
+      name: jump_air
+      takeName: Take 001
+      firstFrame: 36
+      lastFrame: 48
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: fat_character
+        weight: 1
+      - path: main
+        weight: 1
+      - path: main/l_leg
+        weight: 1
+      - path: main/l_leg/l_knee
+        weight: 1
+      - path: main/l_leg/l_knee/l_ankle
+        weight: 1
+      - path: main/l_leg/l_knee/l_ankle/l_foot
+        weight: 1
+      - path: main/r_leg
+        weight: 1
+      - path: main/r_leg/r_knee
+        weight: 1
+      - path: main/r_leg/r_knee/r_ankle
+        weight: 1
+      - path: main/r_leg/r_knee/r_ankle/r_foot
+        weight: 1
+      - path: main/spine_1
+        weight: 1
+      - path: main/spine_1/spine_2
+        weight: 1
+      - path: main/spine_1/spine_2/spine_3
+        weight: 1
+      - path: main/spine_1/spine_2/spine_3/shoulders
+        weight: 1
+      - path: main/spine_1/spine_2/spine_3/shoulders/l_arm1
+        weight: 1
+      - path: main/spine_1/spine_2/spine_3/shoulders/l_arm1/l_arm2
+        weight: 1
+      - path: main/spine_1/spine_2/spine_3/shoulders/l_arm1/l_arm2/l_arm3
+        weight: 1
+      - path: main/spine_1/spine_2/spine_3/shoulders/neck
+        weight: 1
+      - path: main/spine_1/spine_2/spine_3/shoulders/neck/head
+        weight: 1
+      - path: main/spine_1/spine_2/spine_3/shoulders/neck/head/face
+        weight: 1
+      - path: main/spine_1/spine_2/spine_3/shoulders/neck/head/face/l_eye
+        weight: 1
+      - path: main/spine_1/spine_2/spine_3/shoulders/neck/head/face/l_eyelid
+        weight: 1
+      - path: main/spine_1/spine_2/spine_3/shoulders/neck/head/face/mouth
+        weight: 1
+      - path: main/spine_1/spine_2/spine_3/shoulders/neck/head/joint62
+        weight: 1
+      - path: main/spine_1/spine_2/spine_3/shoulders/neck/head/joint62/r_eye
+        weight: 1
+      - path: main/spine_1/spine_2/spine_3/shoulders/neck/head/joint62/r_eyelid
+        weight: 1
+      - path: main/spine_1/spine_2/spine_3/shoulders/r_arm_1
+        weight: 1
+      - path: main/spine_1/spine_2/spine_3/shoulders/r_arm_1/r_arm_2
+        weight: 1
+      - path: main/spine_1/spine_2/spine_3/shoulders/r_arm_1/r_arm_2/r_arm_3
+        weight: 1
+      - path: main/spine_1/stomach
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 1
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
