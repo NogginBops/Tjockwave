@@ -72,7 +72,7 @@ public class Player : MonoBehaviour {
             settings.G = staticG;
         }
 
-        rb.AddForce(Vector3.down * settings.G * rb.mass);
+        rb.AddForce(Vector3.down * settings.G, ForceMode.Acceleration);
 
         // Measures the height the player is off the ground.
         Ray ray = new Ray(transform.position, Vector3.down);

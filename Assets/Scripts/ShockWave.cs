@@ -32,8 +32,6 @@ public class ShockWave : MonoBehaviour {
         {
             Vector3 shockWave = collision.gameObject.transform.position - transform.position;
             collision.gameObject.GetComponent<Rigidbody>().AddForce(shockWave.normalized * force);
-            Debug.DrawRay(collision.gameObject.transform.position, shockWave.normalized * force);
-            Debug.Log("Shockwaved!");
         }
     }
 

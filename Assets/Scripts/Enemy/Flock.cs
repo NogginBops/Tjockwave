@@ -32,13 +32,14 @@ public class Flock : MonoBehaviour {
         {
             Vector3 pos = boid.position;
 
-            int i = Physics.OverlapSphereNonAlloc(pos, settings.neighborRadius, neighbours, 1 << LayerMask.NameToLayer("Enemy"));
+            //int i = Physics.OverlapSphereNonAlloc(pos, settings.neighborRadius, neighbours, 1 << LayerMask.NameToLayer("Enemy"));
             
             Vector3 separation = new Vector3();
             Vector3 alignment = new Vector3();
             Vector3 cohesion = new Vector3();
             Vector3 followPlayer = player.position - boid.position;
 
+            /*
             foreach (var neighbour in neighbours.Take(i))
             {
                 Vector3 neighbourPos = neighbour.transform.position;
@@ -53,7 +54,8 @@ public class Flock : MonoBehaviour {
                 alignment /= i;
                 cohesion /= i;
             }
-            
+            */    
+
             alignment = alignment - boid.velocity;
             cohesion = -(boid.position - cohesion);
             
