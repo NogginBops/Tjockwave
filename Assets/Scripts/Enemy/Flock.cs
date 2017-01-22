@@ -31,13 +31,17 @@ public class Flock : MonoBehaviour {
     public AudioClip growl1;
     public AudioClip growl2;
 
-    public float soundDelay;
+    public UnityEngine.Audio.AudioMixerGroup outputGroup;
+
+    public float soundDelay = 2;
 
     float soundTimer;
 
     void Start()
     {
         audioSource = GetComponent<AudioSource>();
+
+        audioSource.outputAudioMixerGroup = outputGroup;
     }
 
     void Update()
@@ -56,6 +60,8 @@ public class Flock : MonoBehaviour {
                 {
                     audioSource.PlayOneShot(growl2, 0.1f);
                 }
+
+                soundTimer = soundDelay + Random.Range(-1, 1);
             }
         }
     }
