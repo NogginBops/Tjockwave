@@ -1089,6 +1089,7 @@ GameObject:
   - component: {fileID: 4025134175527272}
   - component: {fileID: 114775506347471726}
   - component: {fileID: 54917158172785234}
+  - component: {fileID: 82793292589776678}
   m_Layer: 11
   m_Name: Player
   m_TagString: Player
@@ -1389,7 +1390,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1863824159110648}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 3.5448332, y: 2.09, z: 11.54294}
+  m_LocalPosition: {x: 0, y: 1.5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4019999409867424}
@@ -2139,7 +2140,7 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1319929424562728}
-  m_LocalRotation: {x: 0.2539096, y: 0.659947, z: 0.6503141, w: 0.27765387}
+  m_LocalRotation: {x: 0.25390956, y: 0.6599469, z: 0.65031403, w: 0.27765384}
   m_LocalPosition: {x: 0.013940646, y: -0.0077502187, z: -0.008756503}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -2381,7 +2382,7 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1429012671599204}
-  m_LocalRotation: {x: 0.2539096, y: 0.659947, z: 0.6503141, w: 0.27765387}
+  m_LocalRotation: {x: 0.25390956, y: 0.6599469, z: 0.65031403, w: 0.27765384}
   m_LocalPosition: {x: 0.013157569, y: -0.009218351, z: 0.0073297685}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -2613,6 +2614,86 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 112
   m_CollisionDetection: 0
+--- !u!82 &82793292589776678
+AudioSource:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1863824159110648}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    - serializedVersion: 2
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
 --- !u!95 &95229145513877640
 Animator:
   serializedVersion: 3
@@ -2659,10 +2740,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   arenaLayerMask: Arena
-  health: 100
+  health: 30
   settings:
     scale: {x: 1, y: 1, z: 1}
-    speed: 35
+    speed: 32
     turnSpeed: 30
     jumpForce: 6
     spaceDuration: 1
@@ -2682,6 +2763,11 @@ MonoBehaviour:
     type: 2}
   cameraScript: {fileID: 0}
   playerAnimation: {fileID: 95246902684586058}
+  happySFX: {fileID: 8300000, guid: 284b5c5686e9ad24b9450729e284a56f, type: 3}
+  sortOfHappySFX: {fileID: 8300000, guid: f1e9731623c78a042ae1d39931ed5213, type: 3}
+  foodSFX: {fileID: 8300000, guid: a9acefd4903639240965f0d845ba97ef, type: 3}
+  painSFX: {fileID: 8300000, guid: 0ec96d0861406ea47aaf650b62a37521, type: 3}
+  slamSFX: {fileID: 8300000, guid: ffb833e3a8bd33240b3368343c2efecd, type: 3}
   foodBoostData:
   - scale: {x: 1.5, y: 1.5, z: 1.5}
     speed: 28

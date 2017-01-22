@@ -34,6 +34,8 @@ public class UIController : MonoBehaviour {
 
     public GameObject retry;
     public GameObject returnToMenu;
+
+    public GameObject panel;
     
     void Awake()
     {
@@ -49,6 +51,7 @@ public class UIController : MonoBehaviour {
         youDiedText.enabled = false;
         retry.SetActive(false);
         returnToMenu.SetActive(false);
+        panel.SetActive(false);
     }
 
     void Update ()
@@ -103,7 +106,13 @@ public class UIController : MonoBehaviour {
 
     public void Win()
     {
-
+        youDiedText.enabled = true;
+        youDiedText.text = "Victory!";
+        youDiedText.color = Color.green;
+        youDiedText.rectTransform.localScale = Vector3.one * youDiedFromScale;
+        youDied = true;
+        retry.SetActive(true);
+        returnToMenu.SetActive(true);
     }
 
     public void SetFoodPercentage(int percentage)
@@ -118,6 +127,7 @@ public class UIController : MonoBehaviour {
         youDied = true;
         retry.SetActive(true);
         returnToMenu.SetActive(true);
+        panel.SetActive(true);
     }
 
     public void OnRetry()

@@ -62,19 +62,20 @@ public class WaveManager : MonoBehaviour {
         {
             return;
         }
-        
+
+        if (currWave + 1 >= Waves.Count)
+        {
+            UIController.Instance.Win();
+            Destroy(gameObject);
+            return;
+        }
+
         timer += Time.deltaTime;
 
         Waves[currWave].waveDuration -= Time.deltaTime;
 
         if (Waves[currWave].waveDuration <= 0)
         {
-            if (currWave + 1 >= Waves.Count)
-            {
-                UIController.Instance.Win();
-                return;
-            }
-
             currWave++;
 
             LoadWave(currWave);
