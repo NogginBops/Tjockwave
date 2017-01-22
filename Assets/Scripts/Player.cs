@@ -23,6 +23,14 @@ public class Player : MonoBehaviour {
     public CameraScript cameraScript;
 
     public Animator playerAnimation;
+
+    AudioSource audioSource;
+
+    public AudioClip happySFX;
+    public AudioClip sortOfHappySFX;
+    public AudioClip foodSFX;
+    public AudioClip painSFX;
+    public AudioClip slamSFX;
     
     [Tooltip("The stats the player will have at every food count. Element 0 is 1 food.")]
     public FoodBoostData[] foodBoostData;
@@ -45,6 +53,8 @@ public class Player : MonoBehaviour {
     void Start () {
         rb = GetComponent<Rigidbody>();
 
+        audioSource = GetComponent<AudioSource>();
+
         baseSettings = settings;
         staticG = settings.G;
         baseHealth = health;
@@ -66,6 +76,7 @@ public class Player : MonoBehaviour {
             {
                 rb.AddForce(Vector3.up * settings.jumpForce, ForceMode.Impulse);
                 playerAnimation.SetTrigger("IsJumping");
+                audioSource.PlayOneShot(sortOfHappySFX, 0.5f);
             }
         }
 
@@ -95,9 +106,7 @@ public class Player : MonoBehaviour {
         }
 
         playerAnimation.SetBool("Grounded", grounded);
-
-        Debug.Log(currentPlayerHeight + " " + settings.slamDistanceToGround + " " + (currentPlayerHeight < settings.slamDistanceToGround));
-
+        
         playerAnimation.SetBool("IsRunning", rb.velocity.magnitude > 0.001f);
         
     }
@@ -140,6 +149,8 @@ public class Player : MonoBehaviour {
                 Instantiate(slamShockwaveParticles, transform.position, Quaternion.Euler(new Vector3(90, 0, 0)));
 
                 cameraScript.ShockwaveCameraEffect();
+                
+                audioSource.PlayOneShot(slamSFX);
 
                 // Changes the physics layer of the player and its children.
                 gameObject.layer = LayerMask.NameToLayer("Player");
@@ -199,6 +210,9 @@ public class Player : MonoBehaviour {
             Die();
         }
 
+
+        audioSource.PlayOneShot(painSFX, 0.4f);
+
         UIController.Instance.SetPlayerHealth(health / baseHealth);
     }
 
@@ -228,7 +242,9 @@ public class Player : MonoBehaviour {
             foodCounter--;
         }
 
-        UIController.Instance.SetFoodPercentage(foodCounter / (foodBoostData.Length + 1));
+        audioSource.PlayOneShot(foodSFX, 0.8f);
+
+        UIController.Instance.SetFoodPercentage((int)((foodCounter / (float)(foodBoostData.Length)) * 100));
     }
 
     public void ReturnToBaseValues()

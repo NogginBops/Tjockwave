@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -98,6 +99,11 @@ public class UIController : MonoBehaviour {
         slimeKills++;
 
         slimesKilled.text = "" + slimeKills;
+    }
+
+    public void Win()
+    {
+
     }
 
     public void SetFoodPercentage(int percentage)

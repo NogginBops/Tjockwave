@@ -563,7 +563,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1005150419701596, guid: df272f8a0d0229b40bdc717c12c1c5fd, type: 2}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: df272f8a0d0229b40bdc717c12c1c5fd, type: 2}
@@ -2014,6 +2014,21 @@ Prefab:
         type: 2}
       propertyPath: foodBoostData.Array.data[0].jumpForce
       value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 114775506347471726, guid: d412c9757f38ef54eab5ae542b1e689d,
+        type: 2}
+      propertyPath: foodBoostData.Array.data[0].scale.x
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 114775506347471726, guid: d412c9757f38ef54eab5ae542b1e689d,
+        type: 2}
+      propertyPath: foodBoostData.Array.data[0].scale.y
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 114775506347471726, guid: d412c9757f38ef54eab5ae542b1e689d,
+        type: 2}
+      propertyPath: foodBoostData.Array.data[0].scale.z
+      value: 1.5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: d412c9757f38ef54eab5ae542b1e689d, type: 2}
