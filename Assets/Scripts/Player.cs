@@ -50,6 +50,12 @@ public class Player : MonoBehaviour {
     
     void Update()
     {
+        // Space Timer
+        if (Input.GetKeyUp(KeyCode.Space))
+        {
+            spaceTimer = 0;
+        }
+
         if (Input.GetKeyDown(KeyCode.Space))
         {
             if (grounded)
@@ -61,13 +67,6 @@ public class Player : MonoBehaviour {
 
 	// Update is called once per frame
 	void FixedUpdate () {
-
-        // Space Timer
-        if (Input.GetKeyUp(KeyCode.Space))
-        {
-            spaceTimer = 0;
-        }
-
         // Gravity
         if (Input.GetKey(KeyCode.Space) && rb.velocity.y > 0 && spaceTimer < settings.spaceDuration)
         {
