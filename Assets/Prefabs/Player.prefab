@@ -1717,7 +1717,7 @@ MonoBehaviour:
     scale: {x: 1, y: 1, z: 1}
     speed: 35
     turnSpeed: 30
-    jumpForce: 4
+    jumpForce: 6
     spaceDuration: 1
     G: 0
     spaceG: -2
@@ -1735,7 +1735,7 @@ MonoBehaviour:
     type: 2}
   cameraScript: {fileID: 0}
   foodBoostData:
-  - scale: {x: 2, y: 2, z: 2}
+  - scale: {x: 1.5, y: 1.5, z: 1.5}
     speed: 28
     turnSpeed: 30
     jumpForce: 8
@@ -1745,11 +1745,11 @@ MonoBehaviour:
     fallingG: 45
     slamMinJumpHeight: 1.5
     slamDownForce: 1000
-    slamDistanceToGround: 2
+    slamDistanceToGround: 1.5
     shockForce: 10
     shockSpeed: 6
     shockMaxSize: 6
-  - scale: {x: 3, y: 3, z: 3}
+  - scale: {x: 2, y: 2, z: 2}
     speed: 22
     turnSpeed: 25
     jumpForce: 7
@@ -1759,7 +1759,7 @@ MonoBehaviour:
     fallingG: 30
     slamMinJumpHeight: 1.5
     slamDownForce: 1000
-    slamDistanceToGround: 3
+    slamDistanceToGround: 2
     shockForce: 15
     shockSpeed: 8
     shockMaxSize: 10
