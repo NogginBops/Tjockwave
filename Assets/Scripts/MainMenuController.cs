@@ -10,6 +10,7 @@ public class MainMenuController : MonoBehaviour {
     public float distanceToStop;
     public float speed;
     public Vector2 timeInterval;
+    public bool randomColor;
 
     float randomInterval;
     float timer;
@@ -30,7 +31,12 @@ public class MainMenuController : MonoBehaviour {
         if (timer > randomInterval)
         {
             monsterMarchers.Add(Instantiate(monsterPrefab, bridgeLineSpawner.position, Quaternion.LookRotation(bridgeLineTarget.position - bridgeLineSpawner.position), transform) as GameObject);
-            monsterMarchers[monsterMarchers.Count - 1].transform.GetChild(0).GetComponent<Renderer>().material.color = new Color(Random.Range(0f, 1f), Random.Range(0f, 1f), Random.Range(0f, 1f));
+
+            if(randomColor)
+            {
+                monsterMarchers[monsterMarchers.Count - 1].transform.GetChild(0).GetComponent<Renderer>().material.color = new Color(Random.Range(0f, 1f), Random.Range(0f, 1f), Random.Range(0f, 1f));
+            }
+                             
             randomInterval = Random.Range(timeInterval.x, timeInterval.y);
             timer = 0;
         }
