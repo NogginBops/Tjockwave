@@ -95,9 +95,7 @@ public class Player : MonoBehaviour {
         }
 
         playerAnimation.SetBool("Grounded", grounded);
-
-        Debug.Log(currentPlayerHeight + " " + settings.slamDistanceToGround + " " + (currentPlayerHeight < settings.slamDistanceToGround));
-
+        
         playerAnimation.SetBool("IsRunning", rb.velocity.magnitude > 0.001f);
         
     }
@@ -219,7 +217,7 @@ public class Player : MonoBehaviour {
             foodCounter--;
         }
 
-        UIController.Instance.SetFoodPercentage(foodCounter / (foodBoostData.Length + 1));
+        UIController.Instance.SetFoodPercentage((int)((foodCounter / (float)(foodBoostData.Length)) * 100));
     }
 
     public void ReturnToBaseValues()

@@ -54,18 +54,24 @@ public class WaveManager : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        
-        if (currWave == -1 || currWave + 1 >= Waves.Count)
+
+        if (currWave == -1)
         {
             return;
         }
-
+        
         timer += Time.deltaTime;
 
         Waves[currWave].waveDuration -= Time.deltaTime;
 
         if (Waves[currWave].waveDuration <= 0)
         {
+            if (currWave + 1 >= Waves.Count)
+            {
+                UIController.Instance.Win();
+                return;
+            }
+
             currWave++;
 
             LoadWave(currWave);
