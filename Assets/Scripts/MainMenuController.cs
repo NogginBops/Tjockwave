@@ -74,7 +74,7 @@ public class MainMenuController : MonoBehaviour {
 
     public void OnPlay()
     {
-        UnityEngine.SceneManagement.SceneManager.LoadScene(0);
+        UnityEngine.SceneManagement.SceneManager.LoadScene(1);
     }
 
     public void OnCredtis()
