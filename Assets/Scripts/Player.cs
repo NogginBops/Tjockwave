@@ -217,7 +217,7 @@ public class Player : MonoBehaviour {
             foodCounter--;
         }
 
-        UIController.Instance.SetFoodPercentage(foodCounter / (foodBoostData.Length + 1));
+        UIController.Instance.SetFoodPercentage((int)((foodCounter / (float)(foodBoostData.Length)) * 100));
     }
 
     public void ReturnToBaseValues()
