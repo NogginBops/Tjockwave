@@ -15,14 +15,13 @@ public class ShockWave : MonoBehaviour {
 	
 	// Update is called once per frame
 	void FixedUpdate () {
-
         if (transform.localScale.x >= maxSize)
         {
             Destroy(gameObject);
         }
         else
         {
-            transform.localScale += transform.localScale * (Time.fixedDeltaTime * speed);
+            transform.localScale += transform.localScale * (Time.deltaTime * speed);
         }      
     }
 
