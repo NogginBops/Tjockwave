@@ -42,6 +42,8 @@ public class WaveManager : MonoBehaviour {
     public AudioClip growl1;
     public AudioClip growl2;
 
+    public UnityEngine.Audio.AudioMixerGroup outputGroup;
+
     Queue<Enemy> spawnQueue = new Queue<Enemy>();
 
     float timer;
@@ -114,6 +116,8 @@ public class WaveManager : MonoBehaviour {
 
         flock.growl1 = growl1;
         flock.growl2 = growl2;
+
+        flock.outputGroup = outputGroup;
 
         Waves[wave].flock = flock;
 

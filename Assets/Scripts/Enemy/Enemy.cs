@@ -15,6 +15,8 @@ public class Enemy : MonoBehaviour {
     
     public AudioClip death;
 
+    public UnityEngine.Audio.AudioMixerGroup output;
+
     // Use this for initialization
     void Start () {
         camShake = Camera.main.GetComponent<CameraShake>();
@@ -60,6 +62,7 @@ public class Enemy : MonoBehaviour {
     {
         AudioSource audioSource = new GameObject("EnemyDeath", typeof(AudioSource), typeof(DestroyOnAudioComplete)).GetComponent<AudioSource>();
         audioSource.PlayOneShot(death, 0.4f);
+        audioSource.outputAudioMixerGroup = output;
         health = 0;
         transform.parent.GetComponent<Flock>().RemoveBoid(GetComponent<Rigidbody>());
         Destroy(gameObject);
