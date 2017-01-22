@@ -21,6 +21,8 @@ public class Player : MonoBehaviour {
     public GameObject slamShockWave;
 
     public CameraScript cameraScript;
+
+    public Animator playerAnimation;
     
     [Tooltip("The stats the player will have at every food count. Element 0 is 1 food.")]
     public FoodBoostData[] foodBoostData;
@@ -49,7 +51,7 @@ public class Player : MonoBehaviour {
         baseSpeed = settings.speed;
 
     }
-    
+
     void Update()
     {
         // Space Timer
@@ -63,6 +65,7 @@ public class Player : MonoBehaviour {
             if (grounded)
             {
                 rb.AddForce(Vector3.up * settings.jumpForce, ForceMode.Impulse);
+                playerAnimation.SetTrigger("IsJumping");
             }
         }
 
@@ -85,13 +88,22 @@ public class Player : MonoBehaviour {
                     }
 
                     slamming = true;
+
+                    playerAnimation.SetBool("Grounded", true);
                 }
             }
         }
+
+        playerAnimation.SetBool("Grounded", grounded);
+
+        Debug.Log(currentPlayerHeight + " " + settings.slamDistanceToGround + " " + (currentPlayerHeight < settings.slamDistanceToGround));
+
+        playerAnimation.SetBool("IsRunning", rb.velocity.magnitude > 0.001f);
+        
     }
 
-	// Update is called once per frame
-	void FixedUpdate () {
+    // Update is called once per frame
+    void FixedUpdate () {
         // Gravity
         if (Input.GetKey(KeyCode.Space) && rb.velocity.y > 0 && spaceTimer < settings.spaceDuration)
         {
@@ -144,7 +156,7 @@ public class Player : MonoBehaviour {
         {
             grounded = false;
         }
-
+        
         // -- MOVE TO MOUSE --
         if (Input.GetMouseButton(0))
         {
@@ -155,7 +167,7 @@ public class Player : MonoBehaviour {
             {
                 targetPosition = cameraRay.GetPoint(dist);
             }
-            
+
             Vector3 dir = (targetPosition - transform.position);
             dir.y = 0;
             dir.Normalize();
@@ -166,7 +178,7 @@ public class Player : MonoBehaviour {
 
             rb.velocity = new Vector3(vel2d.x, rb.velocity.y, vel2d.y);
 
-            Quaternion rotation = Quaternion.LookRotation(dir);         
+            Quaternion rotation = Quaternion.LookRotation(dir);
             transform.rotation = Quaternion.Slerp(transform.rotation, rotation, Time.fixedDeltaTime * settings.turnSpeed);
         }
         else
